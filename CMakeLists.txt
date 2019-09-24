@@ -6,7 +6,7 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 #IF(WIN32)
 set(wxWidgets_INCLUDE_DIR C:/CPP/tools/msys64/mingw64/include/wx-3.0)
-set(wxWidgets_LIBRARY_DIR C:/CPP/tools/msys64/mingw64/lib)
+set(wxWidgets_LIB_DIR C:/CPP/tools/msys64/mingw64/lib)
 #ENDIF()
 
 
