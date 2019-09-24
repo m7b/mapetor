@@ -1,0 +1,6 @@
+use-ruleset alias=default
+change-directory W:\
+use-ruleset location=X:\trunk\res\common\a6Karte.mrules as-alias=a6Karte
+load-source
+set-paper height=140.5 width=210.3 orientation=portrait
+//set-print-bounds-paper

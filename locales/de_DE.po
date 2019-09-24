@@ -1,0 +1,299 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: TMGR CardCreator\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-04-16 10:19+0200\n"
+"PO-Revision-Date: 2018-04-16 10:26+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.5\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: _;__\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: inc\n"
+"X-Poedit-SearchPath-1: src\n"
+"X-Poedit-SearchPath-2: wxfb\n"
+
+#: inc/main_app.h:43
+msgid "Displays help on the command line parameters"
+msgstr "Zeige Hilfe über die Kommandozeilenparameter"
+
+#: inc/main_app.h:45
+msgid "Deviating language of the GUI"
+msgstr "Abweichende Sprache der GUI"
+
+#: src/C_wxDlgInfo.cpp:40
+#, c-format
+msgid "Build: %s from rev. %s"
+msgstr "Erstellt: %s von Rev. %s"
+
+#: src/C_wxDlgInfo.cpp:42
+#, c-format
+msgid "Author: %s"
+msgstr "Autor: %s"
+
+#: src/C_wxDlgInfo.cpp:77
+msgid "Creates custom layered maps."
+msgstr "Erstellt benutzerdefinierte Karten mit mehreren Ebenen."
+
+#: src/C_wxMainFrame.cpp:196 wxfb/C_wxfbMainFrame.cpp:151
+msgid "DIN-A5"
+msgstr ""
+
+#: src/C_wxMainFrame.cpp:201 wxfb/C_wxfbMainFrame.cpp:147
+#: wxfb/C_wxfbMainFrame.cpp:150
+msgid "DIN-A4"
+msgstr ""
+
+#: src/C_wxMainFrame.cpp:206 wxfb/C_wxfbMainFrame.cpp:149
+msgid "DIN-A3"
+msgstr ""
+
+#: src/C_wxMainFrame.cpp:211 wxfb/C_wxfbMainFrame.cpp:148
+msgid "Custom"
+msgstr "Benutzerdefiniert"
+
+#: src/C_wxMainFrame.cpp:294
+msgid "New BAT file"
+msgstr "Neue BAT-Datei"
+
+#: src/C_wxMainFrame.cpp:307
+msgid "Open BAT file"
+msgstr "Öffne BAT-Datei"
+
+#: wxfb/C_wxInfoDialog.cpp:29 wxfb/C_wxInfoDialog.cpp:35
+#: wxfb/C_wxInfoDialog.cpp:41 wxfb/C_wxInfoDialog.cpp:90
+msgid "MyLabel"
+msgstr ""
+
+#: wxfb/C_wxInfoDialog.cpp:47
+msgid "Ok"
+msgstr ""
+
+#: wxfb/C_wxInfoDialog.cpp:62
+msgid "Description"
+msgstr "Beschreibung"
+
+#: wxfb/C_wxInfoDialog.cpp:74
+msgid "Components"
+msgstr "Komponente"
+
+#: wxfb/C_wxInfoDialog.cpp:86
+msgid "Changelog"
+msgstr "Änderungsprotokoll"
+
+#: wxfb/C_wxInfoDialog.h:70
+msgid "Information"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:37 wxfb/C_wxfbMainFrame.cpp:54
+#: wxfb/C_wxfbMainFrame.cpp:71
+msgid "D/L"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:40
+msgid "Maperitive GUI:"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:44 wxfb/C_wxfbMainFrame.cpp:51
+#: wxfb/C_wxfbMainFrame.cpp:61 wxfb/C_wxfbMainFrame.cpp:68
+#: wxfb/C_wxfbMainFrame.cpp:78 wxfb/C_wxfbMainFrame.cpp:116
+msgid "Select a file"
+msgstr "Wählen Sie eine Datei aus"
+
+#: wxfb/C_wxfbMainFrame.cpp:44 wxfb/C_wxfbMainFrame.cpp:51
+#: wxfb/C_wxfbMainFrame.cpp:61 wxfb/C_wxfbMainFrame.cpp:68
+#: wxfb/C_wxfbMainFrame.cpp:78
+msgid "*.exe"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:47
+msgid "Maperitive Console:"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:57
+msgid "ImageMagic convert:"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:64
+msgid "ImageMagic identify:"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:74
+msgid "Inkscape:"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:87
+msgid "Application paths"
+msgstr "Anwendungspfade"
+
+#: wxfb/C_wxfbMainFrame.cpp:97
+msgid ""
+"Open Maperitive to specify the geometry bounds of the OSM data to download"
+msgstr ""
+"Öffne Maperitiv, um die Geometriegrenzen der OSM-Daten für den Download "
+"festzulegen"
+
+#: wxfb/C_wxfbMainFrame.cpp:103
+msgid "Geometry bounds:"
+msgstr "Geometriegrenzen:"
+
+#: wxfb/C_wxfbMainFrame.cpp:107
+msgid "Download OSM source"
+msgstr "Lade OSM-Quelle herunter"
+
+#: wxfb/C_wxfbMainFrame.cpp:116
+msgid "*.osm"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:119
+msgid "OSM source:"
+msgstr "OSM-Quelle:"
+
+#: wxfb/C_wxfbMainFrame.cpp:129
+msgid "OSM source"
+msgstr "OSM-Quelle"
+
+#: wxfb/C_wxfbMainFrame.cpp:139
+msgid "Format:"
+msgstr "Format:"
+
+#: wxfb/C_wxfbMainFrame.cpp:143
+msgid "Length [mm]:"
+msgstr "Länge [mm]:"
+
+#: wxfb/C_wxfbMainFrame.cpp:166
+msgid "Height [mm]:"
+msgstr "Höhe [mm]:"
+
+#: wxfb/C_wxfbMainFrame.cpp:181
+msgid "Orientation:"
+msgstr "Ausrichtung:"
+
+#: wxfb/C_wxfbMainFrame.cpp:185
+msgid "Landscape"
+msgstr "Querformat"
+
+#: wxfb/C_wxfbMainFrame.cpp:185
+msgid "Portrait"
+msgstr "Hochformat"
+
+#: wxfb/C_wxfbMainFrame.cpp:191
+msgid "DPI:"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:195
+msgid "96"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:195
+msgid "150"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:195
+msgid "300"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:195
+msgid "600"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:195
+msgid "1200"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:201
+msgid "Open Maperitive to specify the card properties"
+msgstr "Öffne Maperitiv, um die Karteneigenschaften festzulegen"
+
+#: wxfb/C_wxfbMainFrame.cpp:204
+msgid "Center:"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:208
+msgid "11.7359051502125,51.794421271976"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:211
+msgid "Scale:"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:215
+msgid "4500"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:218
+msgid "Grid"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:221
+msgid "Attribution"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:224
+msgid "Scale"
+msgstr ""
+
+#: wxfb/C_wxfbMainFrame.cpp:237
+msgid "Map properties"
+msgstr "Karteneigenschaften"
+
+#: wxfb/C_wxfbMainFrame.cpp:241
+msgid "Create territory card"
+msgstr "Erstelle Gebietskarte"
+
+#: wxfb/C_wxfbMainFrame.cpp:250
+msgid "New Project..."
+msgstr "Neues Projekt..."
+
+#: wxfb/C_wxfbMainFrame.cpp:259
+msgid "Open..."
+msgstr "Öffnen..."
+
+#: wxfb/C_wxfbMainFrame.cpp:270
+msgid "Save"
+msgstr "Speichern"
+
+#: wxfb/C_wxfbMainFrame.cpp:279
+msgid "Save As..."
+msgstr "Speichern als..."
+
+#: wxfb/C_wxfbMainFrame.cpp:290
+msgid "Quit"
+msgstr "Beenden"
+
+#: wxfb/C_wxfbMainFrame.cpp:298
+msgid "&File"
+msgstr "&Datei"
+
+#: wxfb/C_wxfbMainFrame.cpp:302
+msgid "About..."
+msgstr "Über..."
+
+#: wxfb/C_wxfbMainFrame.cpp:310
+msgid "&Help"
+msgstr "&Hilfe"
+
+#~ msgid "empty"
+#~ msgstr "leer"
+
+#~ msgid "a page"
+#~ msgstr "eine Seite"
+
+#~ msgid "Start function 1"
+#~ msgstr "Starte Funktion 1"
+
+#~ msgid "Area from Maperitive:"
+#~ msgstr "Bereich von Maperitiv:"
+
+#~ msgid "OSM Source"
+#~ msgstr "OSM-Quelle"
