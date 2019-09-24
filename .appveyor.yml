@@ -47,10 +47,12 @@ install:
   # Installing wxWidgets sources
   - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
   - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxWidgets-3.0.4
+  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxMSW-3.0.4_gcc720_Dev.7z'
+  - 7z x wxMSW-3.0.4_gcc720_Dev.7z -oC:\CPP\extlibs\wxWidgets-3.0.4
   # build wxWidgets itself
-  - cd tools
-  - call _setenv.bat
-  - call build_wxwidgets.bat
+# - cd tools
+# - call _setenv.bat
+# - call build_wxwidgets.bat
   #
   # Installing msys/boost
   - C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw64/mingw-w64-x86_64-boost 2>&1"
