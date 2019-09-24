@@ -4,7 +4,8 @@ REM Clear output
 REM CLS
 
 REM Extend search path for this batch file
-SET PATH=%PATH%;V:\cmake-3.15.2-win64-x64\bin
+SET PATH=%PATH%;C:\CPP\tools\msys64\mingw64\bin
+REM SET PATH=%PATH%;V:\cmake-3.15.2-win64-x64\bin
 SET PATH=%PATH%;V:\msys64\usr\bin
 SET PATH=%PATH%;V:\doxygen-1.8.15.windows.x64.bin
 SET PATH=%PATH%;V:\graphviz-2.38\release\bin
