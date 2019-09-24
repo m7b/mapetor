@@ -49,10 +49,10 @@ install:
   - 7z x wxWidgets-3.1.2.7z -oC:\CPP\extlibs\wxWidgets-3.1.2
   - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.2/wxMSW-3.1.2_gcc810_x64_Dev.7z'
   - 7z x wxMSW-3.1.2_gcc810_x64_Dev.7z -oC:\CPP\extlibs\wxWidgets-3.1.2
-#  - rename C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc810_dll C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc_lib
+  - rename C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc810_x64_dll C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc_lib
   - dir C:\CPP\extlibs\wxWidgets-3.1.2\
   - dir C:\CPP\extlibs\wxWidgets-3.1.2\lib\
-  - dir C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc810_dll
+  - dir C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc810_x64_dll
   # build wxWidgets itself
 # - cd tools
 # - call _setenv.bat
