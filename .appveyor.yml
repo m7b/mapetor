@@ -43,7 +43,7 @@ install:
   # Installing msys/boost
   - C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw64/mingw-w64-x86_64-boost 2>&1"
   - C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw-w64-x86_64-wxWidgets 2>&1"
-  - C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw-w64-i686-wxWidgets 2>&1"
+  #- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw-w64-i686-wxWidgets 2>&1"
   #
   # start build project
   - mkdir build

@@ -12,6 +12,7 @@ set(wxWidgets_CONFIGURATION mswu)
 
 
 ## wxWidgets
+SET(wxWidgets_DEBUG ON)
 #SET(wxWidgets "wxWidgets-3.1.2")
 SET(CMAKE_FIND_LIBRARY_PREFIXES "lib")
 SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
