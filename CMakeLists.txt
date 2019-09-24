@@ -1,7 +1,14 @@
 cmake_minimum_required(VERSION 3.0)
-project (TMGR_CardCreator)
+project (mapetor)
 
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+
+
+IF(WIN32)
+  set(wxWidgets_INCLUDE_DIR C:/CPP/tools/msys64/mingw64/include)
+  set(wxWidgets_LIBRARY_DIR C:/CPP/tools/msys64/mingw64/lib)
+ENDIF()
+
 
 ## wxWidgets
 #SET(wxWidgets "wxWidgets-3.1.2")
