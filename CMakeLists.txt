@@ -4,10 +4,10 @@ project (mapetor)
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 
-IF(WIN32)
-  set(wxWidgets_INCLUDE_DIR C:/CPP/tools/msys64/mingw64/include)
-  set(wxWidgets_LIBRARY_DIR C:/CPP/tools/msys64/mingw64/lib)
-ENDIF()
+#IF(WIN32)
+set(wxWidgets_INCLUDE_DIR C:/CPP/tools/msys64/mingw64/include)
+set(wxWidgets_LIBRARY_DIR C:/CPP/tools/msys64/mingw64/lib)
+#ENDIF()
 
 
 ## wxWidgets
