@@ -33,31 +33,6 @@ environment:
 
 # scripts that run after cloning repository
 install:
-  # begin prepare for simulate local dev environment
-  - mkdir C:\CPP
-  - mkdir C:\CPP\compiler
-  - mkdir C:\CPP\tools
-  - mkdir C:\CPP\extlibs
-  - move C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0 C:\CPP\compiler
-  - move C:\msys64 C:\CPP\tools
-  # Set path to compiler
-  - set PATH=%MINGW_DIR%;%PATH%
-  # end prepare for sim local env
-  #
-  # Installing wxWidgets sources
-  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.2/wxWidgets-3.1.2.7z'
-  - 7z x wxWidgets-3.1.2.7z -oC:\CPP\extlibs\wxWidgets-3.1.2
-  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.2/wxMSW-3.1.2_gcc810_x64_Dev.7z'
-  - 7z x wxMSW-3.1.2_gcc810_x64_Dev.7z -oC:\CPP\extlibs\wxWidgets-3.1.2
-  - move C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc810_x64_dll C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc_lib
-  - dir C:\CPP\extlibs\wxWidgets-3.1.2\
-  - dir C:\CPP\extlibs\wxWidgets-3.1.2\lib\
-  - dir C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc_lib
-  # build wxWidgets itself
-# - cd tools
-# - call _setenv.bat
-# - call build_wxwidgets.bat
-  #
   # Installing msys/boost
   - C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw64/mingw-w64-x86_64-boost mingw-w64-x86_64-wxWidgets mingw-w64-i686-wxWidgets 2>&1"
   #
