@@ -4,7 +4,7 @@ project (TMGR_CardCreator)
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 ## wxWidgets
-SET(wxWidgets "wxWidgets-3.0.4")
+SET(wxWidgets "wxWidgets-3.1.2")
 SET(CMAKE_FIND_LIBRARY_PREFIXES "lib")
 SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 SET(wxWidgets_ROOT_DIR "W:/${wxWidgets}")
