@@ -32,6 +32,7 @@ matrix:
           - ubuntu-toolchain-r-test
         packages:
           - libboost-all-dev
+          - libwxgtk3.0-dev
 
     compiler: gcc
     
