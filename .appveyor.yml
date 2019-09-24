@@ -45,10 +45,11 @@ install:
   # end prepare for sim local env
   #
   # Installing wxWidgets sources
-  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
-  - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxWidgets-3.0.4
-  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxMSW-3.0.4_gcc720_Dev.7z'
-  - 7z x wxMSW-3.0.4_gcc720_Dev.7z -oC:\CPP\extlibs\wxWidgets-3.0.4
+  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.2/wxWidgets-3.1.2.zip'
+  - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxWidgets-3.1.2
+  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.2/wxMSW-3.1.2_gcc810_x64_Dev.7z'
+  - 7z x wxMSW-3.0.4_gcc720_Dev.7z -oC:\CPP\extlibs\wxWidgets-3.1.2
+  - rename C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc810_dll C:\CPP\extlibs\wxWidgets-3.1.2\lib\gcc_lib
   # build wxWidgets itself
 # - cd tools
 # - call _setenv.bat
