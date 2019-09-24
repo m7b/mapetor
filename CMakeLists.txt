@@ -5,15 +5,15 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 
 #IF(WIN32)
-set(wxWidgets_INCLUDE_DIR C:/CPP/tools/msys64/mingw64/include)
+set(wxWidgets_INCLUDE_DIR C:/CPP/tools/msys64/mingw64/include/wx-3.0)
 set(wxWidgets_LIBRARY_DIR C:/CPP/tools/msys64/mingw64/lib)
 #ENDIF()
 
 
 ## wxWidgets
 #SET(wxWidgets "wxWidgets-3.1.2")
-#SET(CMAKE_FIND_LIBRARY_PREFIXES "lib")
-#SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+SET(CMAKE_FIND_LIBRARY_PREFIXES "lib")
+SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 #SET(wxWidgets_ROOT_DIR "C:/CPP/tools/msys64/mingw64/include/wx-3.0")
 #SET(wxWidgets_LIB_DIR "C:/CPP/tools/msys64/mingw64/lib")
 #SET(wxWidgets_CONFIGURATION mswu)
