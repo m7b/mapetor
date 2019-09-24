@@ -4,12 +4,12 @@ project (TMGR_CardCreator)
 SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
 ## wxWidgets
-SET(wxWidgets "wxWidgets-3.1.2")
-SET(CMAKE_FIND_LIBRARY_PREFIXES "lib")
-SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
-SET(wxWidgets_ROOT_DIR "C:/CPP/tools/msys64/mingw64/include/wx-3.0")
-SET(wxWidgets_LIB_DIR "C:/CPP/tools/msys64/mingw64/lib")
-SET(wxWidgets_CONFIGURATION mswu)
+#SET(wxWidgets "wxWidgets-3.1.2")
+#SET(CMAKE_FIND_LIBRARY_PREFIXES "lib")
+#SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+#SET(wxWidgets_ROOT_DIR "C:/CPP/tools/msys64/mingw64/include/wx-3.0")
+#SET(wxWidgets_LIB_DIR "C:/CPP/tools/msys64/mingw64/lib")
+#SET(wxWidgets_CONFIGURATION mswu)
 FIND_PACKAGE(wxWidgets REQUIRED richtext adv html core xml base)
 INCLUDE("${wxWidgets_USE_FILE}")
 
