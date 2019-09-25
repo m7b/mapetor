@@ -26,7 +26,7 @@ SET(BOOST_LIBRARYDIR "C:/CPP/extlibs/boost_1_70_0/stage/lib")
 SET(Boost_USE_STATIC_LIBS        ON)
 SET(Boost_USE_MULTITHREADED      ON)
 SET(Boost_USE_STATIC_RUNTIME    OFF)
-FIND_PACKAGE(Boost 1.70.0 REQUIRED filesystem date_time)
+FIND_PACKAGE(Boost 1.70.0 REQUIRED filesystem date_time system)
 
 
 include_directories(
