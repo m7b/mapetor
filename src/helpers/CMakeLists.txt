@@ -1,3 +1,5 @@
+FIND_PACKAGE(Boost 1.70.0 REQUIRED filesystem)
+
 add_library(
 	helpers
     helpers.cpp
