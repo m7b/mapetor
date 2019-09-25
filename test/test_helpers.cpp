@@ -1,5 +1,5 @@
 #define BOOST_TEST_MODULE helpers
-#include <boost/test/unit_test.hpp>
+#include <boost/test/included/unit_test.hpp>
 
 #include <string>
 #include "helpers/helpers.h"
