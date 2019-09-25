@@ -44,30 +44,24 @@ install:
   - move C:\msys64 C:\CPP\tools
   - move C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0 C:\CPP\compiler
   - set PATH=%MINGW_DIR%;C:\Program Files\7-Zip
-  #- set PATH=%MINGW_DIR%;%PATH%
-  #- set PATH=%MINGW_DIR%\..\libexec\gcc\x86_64-w64-mingw32\8.1.0;%PATH%
   #
   # Installing msys/boost
-  #- set PATH=%PATH%;C:\CPP\tools\msys64\usr\bin
   - C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw64/mingw-w64-x86_64-boost 2>&1"
-  #- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw-w64-x86_64-wxWidgets 2>&1"
-  #- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw-w64-i686-wxWidgets 2>&1"
   #
   # Installing wxWidgets
   - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
   - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxwidgets-3.0.4
   - cd C:\CPP\extlibs\wxwidgets-3.0.4\build\msw
-  - dir
-  - set
   - mingw32-make --version
-  - mingw32-make -j1 -f makefile.gcc BUILD=debug SHARED=0 UNICODE=1 CXXFLAGS="-g -static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -DwxDEBUG_LEVEL=1" setup_h
-  - mingw32-make -j9 -f makefile.gcc BUILD=debug SHARED=0 UNICODE=1 CXXFLAGS="-g -static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -DwxDEBUG_LEVEL=1"
+  - mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" setup_h
+  - mingw32-make -j9 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0"
   #
   # start build project
-#  - mkdir build
-#  - cd build
-#  - cmake -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
-#  - cmake --build .
+  - cd %APPVEYOR_BUILD_FOLDER%
+  - mkdir build
+  - cd build
+  - cmake -G "MinGW Makefiles" -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
+  - cmake --build .
 #  - cd test
 #  - ctest
 
