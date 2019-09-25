@@ -56,7 +56,7 @@ install:
   - dir
   - set
   - mingw32-make --version
-  - type -p mingw32-make
+  - cmd: mingw32-make --version
   - mingw32-make -j1 -f makefile.gcc BUILD=debug   SHARED=0 UNICODE=1 CXXFLAGS="-g -static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -DwxDEBUG_LEVEL=1" setup_h
   - mingw32-make -j9 -f makefile.gcc BUILD=debug   SHARED=0 UNICODE=1 CXXFLAGS="-g -static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -DwxDEBUG_LEVEL=1"
   #
