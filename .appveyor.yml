@@ -43,7 +43,7 @@ install:
   - mkdir C:\CPP\extlibs
   - move C:\msys64 C:\CPP\tools
   - move C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0 C:\CPP\compiler
-  - set PATH=%MINGW_DIR%
+  - set PATH=%MINGW_DIR%;C:\Program Files\7-Zip
   #- set PATH=%MINGW_DIR%;%PATH%
   #- set PATH=%MINGW_DIR%\..\libexec\gcc\x86_64-w64-mingw32\8.1.0;%PATH%
   #
