@@ -26,7 +26,7 @@ SET(BOOST_LIBRARYDIR "C:/CPP/extlibs/boost_1_70_0/stage/lib")
 SET(Boost_USE_STATIC_LIBS        ON)
 SET(Boost_USE_MULTITHREADED      ON)
 SET(Boost_USE_STATIC_RUNTIME    OFF)
-FIND_PACKAGE(Boost 1.70.0 REQUIRED filesystem date_time unit_test_framework)
+FIND_PACKAGE(Boost 1.70.0 REQUIRED filesystem date_time)
 
 
 include_directories(
@@ -39,7 +39,7 @@ include_directories(
 add_subdirectory(test)
 add_subdirectory(doc)
 add_subdirectory(locales)
-#add_subdirectory(include)
+#todo: add_subdirectory(include)
 add_subdirectory(src)
 
 #todo ADD_DEPENDENCIES(${CMAKE_PROJECT_NAME} svnheader locales doc)
