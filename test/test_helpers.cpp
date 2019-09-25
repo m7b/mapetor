@@ -1,8 +1,7 @@
 #define BOOST_TEST_MODULE helpers
 #include <winsock2.h>
 
-//#include <boost/test/included/unit_test.hpp>
-#include <boost/test/unit_test.hpp>
+#include <boost/test/included/unit_test.hpp>
 
 #include "helpers/helpers.h"
 #include <string>

@@ -1,5 +1,6 @@
 #define BOOST_TEST_MODULE prjprops
-#include <boost/test/unit_test.hpp>
+
+#include <boost/test/included/unit_test.hpp>
 
 #include <string>
 #include "prjprops/prjprops.h"
