@@ -1,8 +1,11 @@
 #define BOOST_TEST_MODULE helpers
-#include <boost/test/included/unit_test.hpp>
+#include <winsock2.h>
 
-#include <string>
+//#include <boost/test/included/unit_test.hpp>
+#include <boost/test/unit_test.hpp>
+
 #include "helpers/helpers.h"
+#include <string>
 
 BOOST_AUTO_TEST_CASE(PassTest)
 {
