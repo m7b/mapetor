@@ -80,6 +80,12 @@ install:
   - ps: Start-FileDownload 'https://github.com/upx/upx/releases/download/v3.95/upx-3.95-win64.zip'
   - 7z x upx-3.95-win64.zip -oC:\CPP\tools -y
   - set PATH=%PATH%;C:\CPP\tools\upx-3.95-win64
+  ##
+  ## Install gettext
+  - CD C:\Temp
+  - ps: Start-FileDownload 'https://github.com/mlocati/gettext-iconv-windows/releases/download/v0.20.1-v1.16/gettext0.20.1-iconv1.16-static-64.zip'
+  - 7z x gettext0.20.1-iconv1.16-static-64.zip -oC:\CPP\tools\gettext0.20.1-iconv1.16-static-64 -y
+  - set PATH=%PATH%;C:\CPP\tools\gettext0.20.1-iconv1.16-static-64\bin
   
   
   ## start build project
