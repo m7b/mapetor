@@ -39,7 +39,7 @@ include_directories(
 add_subdirectory(test)
 add_subdirectory(doc)
 add_subdirectory(locales)
-add_subdirectory(include)
+#add_subdirectory(include)
 add_subdirectory(src)
 
 ADD_DEPENDENCIES(${CMAKE_PROJECT_NAME} svnheader locales doc)
