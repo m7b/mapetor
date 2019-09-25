@@ -37,6 +37,7 @@ cache:
 # scripts that run after cloning repository
 install:
   # begin prepare for simulate local dev environment
+  - IF NOT EXIST C:\Temp\NUL MKDIR C:\Temp
   - IF NOT EXIST C:\CPP\NUL MKDIR C:\CPP
   - IF NOT EXIST C:\CPP\compiler\NUL MKDIR C:\CPP\compiler
   - IF NOT EXIST C:\CPP\tools\NUL MKDIR C:\CPP\tools
@@ -47,6 +48,7 @@ install:
   #
   ## Installing msys/boost
   ##- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw64/mingw-w64-x86_64-boost 2>&1"
+  #- CD C:\Temp
   #- ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
   #- 7z x boost_1_70_0.7z -oC:\CPP\extlibs -y
   #- cd C:\CPP\extlibs\boost_1_70_0
@@ -55,6 +57,7 @@ install:
   #- b2 toolset=gcc address-model=32 cxxflags=-std=gnu++17 --with-filesystem --with-date_time --with-test
   ##
   ## Installing wxWidgets
+  #- CD C:\Temp
   #- ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
   #- 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxwidgets-3.0.4 -y
   #- cd C:\CPP\extlibs\wxwidgets-3.0.4\build\msw
@@ -62,6 +65,13 @@ install:
   #- mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" setup_h
   #- mingw32-make -j9 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0"
   ##
+  ##
+  ## Install doxygen
+  - CD C:\Temp
+  - ps: Start-FileDownload 'http://doxygen.nl/files/doxygen-1.8.16.windows.bin.zip'
+  - 7z x doxygen-1.8.16.windows.bin.zip -oC:\CPP\tools\doxygen-1.8.16 -y
+  - set PATH=%PATH%;C:\CPP\tools\doxygen-1.8.16
+  
   ## start build project
   - cd %APPVEYOR_BUILD_FOLDER%
   - mkdir build
