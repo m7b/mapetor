@@ -21,9 +21,9 @@ FOREACH(testSrc ${TEST_SRCS})
         #link to Boost libraries AND your targets and dependencies
         target_link_libraries(
 			${testName}
-			${Boost_LIBRARIES}
 			helpers
 			prjprops
+			${Boost_LIBRARIES}
 			ws2_32
 			-static
 		)
