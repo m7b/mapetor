@@ -74,6 +74,12 @@ install:
   - ps: Start-FileDownload 'http://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.zip'
   - 7z x graphviz-2.38.zip -oC:\CPP\tools\graphviz-2.38 -y
   - set PATH=%PATH%;C:\CPP\tools\graphviz-2.38\release\bin
+  ##
+  ## Install UPX
+  - CD C:\Temp
+  - ps: Start-FileDownload 'https://github.com/upx/upx/releases/download/v3.95/upx-3.95-win64.zip'
+  - 7z x upx-3.95-win64.zip -oC:\CPP\tools -y
+  - set PATH=%PATH%;C:\CPP\tools\upx-3.95-win64
   
   
   ## start build project
