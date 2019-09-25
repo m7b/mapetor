@@ -71,7 +71,7 @@ install:
   - ps: Start-FileDownload 'http://doxygen.nl/files/doxygen-1.8.16.windows.bin.zip'
   - 7z x doxygen-1.8.16.windows.bin.zip -oC:\CPP\tools\doxygen-1.8.16 -y
   - set PATH=%PATH%;C:\CPP\tools\doxygen-1.8.16
-  - ps: Start-FileDownload 'https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.zip'
+  - ps: Start-FileDownload 'http://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.zip'
   - 7z x graphviz-2.38.zip -oC:\CPP\tools\graphviz-2.38 -y
   - set PATH=%PATH%;C:\CPP\tools\graphviz-2.38\release\bin
   
