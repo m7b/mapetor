@@ -16,7 +16,7 @@ INCLUDE("${wxWidgets_USE_FILE}")
 
 
 ## Boost
-#SET(Boost_DEBUG ON)
+SET(Boost_DEBUG ON)
 SET(Boost_COMPILER "-mgw81")
 SET(Boost_ARCHITECTURE "-x32")
 #---------------------------------------------------
