@@ -48,7 +48,11 @@ install:
   #- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw-w64-i686-wxWidgets 2>&1"
   - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
   - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxwidgets-3.0.4
+  - set PATH=C:\CPP\tools\msys64\usr\bin;%PATH%
   - cd C:\CPP\extlibs\wxwidgets-3.0.4\build\msw
+  - dir
+  - set
+  - mingw32-make --version
   - mingw32-make -j1 -f makefile.gcc BUILD=debug   SHARED=0 UNICODE=1 CXXFLAGS="-g -static -mthreads -pipe -std=gnu++17 -march=i686 -Wall -O0 -DwxDEBUG_LEVEL=1" setup_h
   - mingw32-make -j9 -f makefile.gcc BUILD=debug   SHARED=0 UNICODE=1 CXXFLAGS="-g -static -mthreads -pipe -std=gnu++17 -march=i686 -Wall -O0 -DwxDEBUG_LEVEL=1"
   #
