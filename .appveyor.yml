@@ -86,6 +86,12 @@ install:
   - ps: Start-FileDownload 'https://github.com/mlocati/gettext-iconv-windows/releases/download/v0.20.1-v1.16/gettext0.20.1-iconv1.16-static-64.zip'
   - 7z x gettext0.20.1-iconv1.16-static-64.zip -oC:\CPP\tools\gettext0.20.1-iconv1.16-static-64 -y
   - set PATH=%PATH%;C:\CPP\tools\gettext0.20.1-iconv1.16-static-64\bin
+  ##
+  ## Install Pandoc
+  - CD C:\Temp
+  - ps: Start-FileDownload 'https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-windows-x86_64.zip'
+  - 7z x pandoc-2.7.3-windows-x86_64.zip -oC:\CPP\tools -y
+  - set PATH=%PATH%;C:\CPP\tools\pandoc-2.7.3-windows-x86_64
   
   
   ## start build project
