@@ -41,18 +41,18 @@ install:
   - mkdir C:\CPP\compiler
   - mkdir C:\CPP\tools
   - mkdir C:\CPP\extlibs
-  - move C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0 C:\CPP\compiler
   - move C:\msys64 C:\CPP\tools
+  - move C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0 C:\CPP\compiler
   - set PATH=%MINGW_DIR%;%PATH%
   - set PATH=%MINGW_DIR%\..\libexec\gcc\x86_64-w64-mingw32\8.1.0;%PATH%
-  #- set PATH=%MINGW_DIR%;C:\Program Files\7-Zip
+  #
   # Installing msys/boost
   #- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw64/mingw-w64-x86_64-boost 2>&1"
   #- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw-w64-x86_64-wxWidgets 2>&1"
   #- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw-w64-i686-wxWidgets 2>&1"
   - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
   - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxwidgets-3.0.4
-  - set PATH=C:\CPP\tools\msys64\usr\bin;%PATH%
+  #- set PATH=C:\CPP\tools\msys64\usr\bin;%PATH%
   - cd C:\CPP\extlibs\wxwidgets-3.0.4\build\msw
   - dir
   - set
