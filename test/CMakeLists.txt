@@ -4,7 +4,7 @@
 #Setup CMake to run tests
 ENABLE_TESTING()
 
-FIND_PACKAGE(Boost 1.70.0 REQUIRED filesystem unit_test_framework)
+FIND_PACKAGE(Boost 1.70.0 REQUIRED unit_test_framework)
 #INCLUDE_DIRECTORIES(${Boost_INCLUDE_DIRS})
 
 #I like to keep test files in a separate source directory called test
@@ -26,6 +26,7 @@ FOREACH(testSrc ${TEST_SRCS})
             ${Boost_LIBRARIES}
             ws2_32
             -static
+            -s
         )
 
         #Finally add it to test execution - 
