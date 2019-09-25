@@ -1,7 +1,10 @@
 #ifndef VERSION_H_INCLUDED
 #define VERSION_H_INCLUDED
 
-#include "svn_version.h"
+//todo: #include "svn_version.h"
+#define SVN_LOCAL_MODIFICATIONS 0
+#define SVN_REVISION            1234
+#define SVN_TIME_NOW            01.01.1970
 
 #define STRINGIZE2(s) #s
 #define STRINGIZE(s) STRINGIZE2(s)
@@ -48,7 +51,7 @@
 #endif
 #define VER_INTERNAL_NAME_STR       VER_ORIGINAL_FILENAME_STR
 
-#define VER_COPYRIGHT_STR             "Copyright © mjbsoft"
+#define VER_COPYRIGHT_STR             "Copyright ï¿½ mjbsoft"
 
 #ifdef _DEBUG
   #define VER_VER_DEBUG             VS_FF_DEBUG
