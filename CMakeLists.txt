@@ -16,15 +16,13 @@ INCLUDE("${wxWidgets_USE_FILE}")
 
 
 ## Boost
-#SET(Boost "boost_1_70_0")
-##SET(Boost_DEBUG ON)
-#SET(Boost_COMPILER "-mgw81")
-##http://www.boost.org/doc/libs/1_67_0/more/getting_started/windows.html#library-naming
-#SET(Boost_Architecture_and_address_model_tag "-x32")
-##---------------------------------------------------
-#SET(BOOST_ROOT "W:/${Boost}")
-#SET(BOOST_INCLUDEDIR "W:/${Boost}")
-#SET(BOOST_LIBRARYDIR "W:/${Boost}/stage/lib")
+#SET(Boost_DEBUG ON)
+SET(Boost_COMPILER "-mgw81")
+SET(Boost_ARCHITECTURE "-x32")
+#---------------------------------------------------
+SET(BOOST_ROOT "C:/CPP/extlibs/boost_1_70_0")
+SET(BOOST_INCLUDEDIR "C:/CPP/extlibs/boost_1_70_0")
+SET(BOOST_LIBRARYDIR "C:/CPP/extlibs/boost_1_70_0/stage/lib")
 SET(Boost_USE_STATIC_LIBS        ON)
 SET(Boost_USE_MULTITHREADED      ON)
 SET(Boost_USE_STATIC_RUNTIME    OFF)
