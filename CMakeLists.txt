@@ -8,11 +8,11 @@ SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 SET(wxWidgets "wxWidgets-3.0.4")
 SET(CMAKE_FIND_LIBRARY_PREFIXES "lib")
 SET(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
-##SET(wxWidgets_ROOT_DIR "C:/CPP/extlibs/${wxWidgets}")
-##SET(wxWidgets_LIB_DIR "C:/CPP/extlibs/${wxWidgets}/lib/gcc_lib")
-##SET(wxWidgets_CONFIGURATION mswu)
-#FIND_PACKAGE(wxWidgets REQUIRED richtext adv html core xml base)
-#INCLUDE("${wxWidgets_USE_FILE}")
+SET(wxWidgets_ROOT_DIR "C:/CPP/extlibs/${wxWidgets}")
+SET(wxWidgets_LIB_DIR "C:/CPP/extlibs/${wxWidgets}/lib/gcc_lib")
+SET(wxWidgets_CONFIGURATION mswu)
+FIND_PACKAGE(wxWidgets REQUIRED richtext adv html core xml base)
+INCLUDE("${wxWidgets_USE_FILE}")
 
 
 ## Boost
