@@ -35,7 +35,7 @@ include_directories(
 )
 
 
-#add_subdirectory(test)
+add_subdirectory(test)
 add_subdirectory(doc)
 add_subdirectory(locales)
 #todo: add_subdirectory(include)

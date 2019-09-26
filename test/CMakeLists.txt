@@ -23,7 +23,6 @@ FOREACH(testSrc ${TEST_SRCS})
             ${testName}
             helpers
             prjprops
-            ${Boost_LIBRARIES}
             ws2_32
             -static
             -s
