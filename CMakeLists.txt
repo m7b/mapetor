@@ -19,7 +19,6 @@ INCLUDE("${wxWidgets_USE_FILE}")
 #SET(Boost_DEBUG ON)
 SET(Boost_COMPILER "-mgw81")
 SET(Boost_ARCHITECTURE "-x32")
-#---------------------------------------------------
 SET(BOOST_ROOT "C:/CPP/extlibs/boost_1_70_0")
 SET(BOOST_INCLUDEDIR "C:/CPP/extlibs/boost_1_70_0")
 SET(BOOST_LIBRARYDIR "C:/CPP/extlibs/boost_1_70_0/stage/lib")
@@ -42,5 +41,58 @@ add_subdirectory(locales)
 #todo: add_subdirectory(include)
 add_subdirectory(src)
 
+# the executable
+add_executable(
+    ${CMAKE_PROJECT_NAME}
+    WIN32
+    src/main_app.cpp
+    ${PROJECT_SOURCE_DIR}/res/resource.rc
+)
+SET_PROPERTY(SOURCE ${PROJECT_SOURCE_DIR}/res/resource.rc APPEND PROPERTY OBJECT_DEPENDS ${CHANGELOG_HTML})
+
+# target compile options
+target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Debug>:-g>)
+target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Debug>:-O0>)
+target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Release>:-O3>)
+target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC $<$<COMPILE_LANGUAGE:CXX>:-std=gnu++17>)
+target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -m32)
+target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -mthreads)
+target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -pipe)
+target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -Wall)
+
+# target compile definitions
+target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC EXE_NAME=${CMAKE_PROJECT_NAME})
+target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __GNUWIN32__)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __WXMSW__)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC _WIN32_WINNT=0x0601)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Release>:wxDEBUG_LEVEL=0>)
+target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Debug>:wxDEBUG_LEVEL=1>)
+
+
+target_link_libraries(
+    ${CMAKE_PROJECT_NAME}
+    gui
+    prjprops
+    shlwapi
+    version
+    oleacc
+     gcc
+     msvcrt
+    -static
+    $<$<CONFIG:Release>:-s>
+)
+
+
+
 #todo ADD_DEPENDENCIES(${CMAKE_PROJECT_NAME} svnheader locales doc)
-ADD_DEPENDENCIES(${CMAKE_PROJECT_NAME} locales doc)
+ADD_DEPENDENCIES(${CMAKE_PROJECT_NAME} locales doc changelog)
+
+
+if(CMAKE_BUILD_TYPE STREQUAL Release)
+    MESSAGE(STATUS "Do minimal size release stuff")
+	FIND_PROGRAM(UPX_EXECUTABLE upx.exe)
+	ADD_CUSTOM_COMMAND(TARGET ${CMAKE_PROJECT_NAME} POST_BUILD
+    COMMAND ${UPX_EXECUTABLE} $<TARGET_FILE:${CMAKE_PROJECT_NAME}>
+    COMMENT "Running UPX packer ..."
+	)
+endif()
