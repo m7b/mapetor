@@ -48,6 +48,9 @@ install:
   #- move C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0 C:\CPP\compiler
   - set
   - set PATH=C:\ProgramData\chocolatey\bin;C:\Program Files\7-Zip;C:\Program Files (x86)\CMake\bin
+#  ##
+#  ## Install Pandoc, doxygen graphviz UPX
+  - cinst pandoc doxygen.install graphviz upx
   ##
   ## Install Compiler
 #  - CD C:\Temp
@@ -76,28 +79,12 @@ install:
 #  - mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" setup_h
 #  - mingw32-make -j9 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0"
   ##
-  ##
-  ## Install doxygen
-  - ps: choco install doxygen.install
-#  ##
-#  ## Install graphviz
-  - ps: choco install graphviz
-#  ##
-#  ## Install UPX
-  - ps: choco install upx
 #  ##
 #  ## Install gettext
 #  - CD C:\Temp
 #  - ps: Start-FileDownload 'https://github.com/mlocati/gettext-iconv-windows/releases/download/v0.20.1-v1.16/gettext0.20.1-iconv1.16-static-64.zip'
 #  - 7z x gettext0.20.1-iconv1.16-static-64.zip -oC:\CPP\tools\gettext0.20.1-iconv1.16-static-64 -y
   - set PATH=%PATH%;C:\CPP\tools\gettext0.20.1-iconv1.16-static-64\bin
-#  ##
-#  ## Install Pandoc
-  - cinst pandoc
-#  - CD C:\Temp
-#  - ps: Start-FileDownload 'https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-windows-x86_64.zip'
-#  - 7z x pandoc-2.7.3-windows-x86_64.zip -oC:\CPP\tools -y
-#  - set PATH=%PATH%;C:\CPP\tools\pandoc-2.7.3-windows-x86_64
   
   
   ## start build project
