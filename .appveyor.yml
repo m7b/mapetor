@@ -39,40 +39,32 @@ install:
   # begin prepare for simulate local dev environment
   - IF NOT EXIST C:\CPP\NUL MKDIR C:\CPP
   - IF NOT EXIST C:\CPP\extlibs\NUL MKDIR C:\CPP\extlibs
-  - set
+
+  # reset PATH
   - set PATH=C:\ProgramData\chocolatey\bin;C:\Program Files\7-Zip;C:\Program Files (x86)\CMake\bin
-#  ##
-#  ## Install Pandoc, doxygen, graphviz, UPX, MinGW-w64 --x86 (32bit)
+
+  # Install Pandoc, doxygen, graphviz, UPX, MinGW-w64 --x86 (32bit)
   - cinst pandoc doxygen.install graphviz upx mingw --x86
   - refreshenv
-#  ##
-#  ## Install gettext
-#  - ps: Start-FileDownload 'https://github.com/mlocati/gettext-iconv-windows/releases/download/v0.20.1-v1.16/gettext0.20.1-iconv1.16-static-64.zip'
-#  - 7z x gettext0.20.1-iconv1.16-static-64.zip -oC:\CPP\tools\gettext0.20.1-iconv1.16-static-64 -y
-#  - set PATH=%PATH%;C:\CPP\tools\gettext0.20.1-iconv1.16-static-64\bin
-  ##
-  ## Installing msys/boost
-  ##- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw64/mingw-w64-x86_64-boost 2>&1"
-#  - ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
-#  - 7z x boost_1_70_0.7z -oC:\CPP\extlibs -y
-#  - cd C:\CPP\extlibs\boost_1_70_0
-#  - CALL bootstrap gcc
-#  #- b2 --clean-all
-#  - b2 headers
-#  - b2 toolset=gcc address-model=32 cxxflags=-std=gnu++17 --with-filesystem --with-date_time --with-test
-  ##
-  ## Installing wxWidgets
-#  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
-#  - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxwidgets-3.0.4 -y
-#  - cd C:\CPP\extlibs\wxwidgets-3.0.4\build\msw
-#  - mingw32-make --version
-#  #- mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" clean
-#  - mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" setup_h
-#  - mingw32-make -j9 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0"
-  ##
-  
-  
-  ## start build project
+
+  # Installing boost & build
+  - ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
+  - 7z x boost_1_70_0.7z -oC:\CPP\extlibs -y
+  - cd C:\CPP\extlibs\boost_1_70_0
+  - CALL bootstrap gcc
+  #- b2 --clean-all
+  - b2 headers
+  - b2 toolset=gcc address-model=32 cxxflags=-std=gnu++17 --with-filesystem --with-date_time --with-test
+
+  # Installing wxWidgets & build
+  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
+  - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxwidgets-3.0.4 -y
+  - cd C:\CPP\extlibs\wxwidgets-3.0.4\build\msw
+  #- mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" clean
+  - mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" setup_h
+  - mingw32-make -j9 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0"
+ 
+  # start build project
   - cd %APPVEYOR_BUILD_FOLDER%
   - mkdir build
   - cd build
