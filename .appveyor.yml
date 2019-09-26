@@ -51,6 +51,7 @@ install:
 #  ##
 #  ## Install Pandoc, doxygen, graphviz, UPX, MinGW-w64
   - cinst pandoc doxygen.install graphviz upx mingw
+  - refreshenv
   ##
   ## Install Compiler
 #  - CD C:\Temp
