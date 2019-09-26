@@ -55,6 +55,8 @@ target_link_libraries(
     shlwapi
     version
     oleacc
+    gcc
+    msvcrt
     -static
     $<$<CONFIG:Release>:-s>
 )
