@@ -2,16 +2,16 @@
 #include "version.h"
 #include "winuser.h"
 
-MAINICON  ICON    "Icons-Land-Gis-Gps-Map-Layers.ico"
+MAINICON         ICON   "Icons-Land-Gis-Gps-Map-Layers.ico"
 
-TMGR_CardCreator_de_DE    MOFILE    "../locales/de_DE.mo"
+mapetor_de_DE    MOFILE "locales/de_DE.mo"
 
-CHANGELOG    RCDATA "CHANGELOG.html"
+CHANGELOG        RCDATA "CHANGELOG.html"
 
-INKSCAPE     RCDATA "new_inkscape_0.92.2_file.svg"
-PRJBATCH     RCDATA "prjbatch.bat"
-MAPSCR1      RCDATA "map_1.mscript"
-MAPRULES     RCDATA "common/a6Karte.mrules"
+INKSCAPE         RCDATA "new_inkscape_0.92.2_file.svg"
+PRJBATCH         RCDATA "prjbatch.bat"
+MAPSCR1          RCDATA "map_1.mscript"
+MAPRULES         RCDATA "common/a6Karte.mrules"
 
 //https://msdn.microsoft.com/en-us/library/aa381058.aspx?f=255&MSPPError=-2147217396
 

@@ -38,7 +38,7 @@
                                       "." STRINGIZE(VERSION_REVISION) \
                                       " " VERSION_MODIFIER VERSION_BUILD_TYPE VERSION_DEV_STAGE
 
-#define VER_PRODUCTNAME_STR           "Territory Card Generator"
+#define VER_PRODUCTNAME_STR           "mapetor"
 #define VER_PRODUCT_VERSION           VER_FILE_VERSION
 #define VER_PRODUCT_VERSION_STR       VER_FILE_VERSION_STR
 
@@ -51,7 +51,7 @@
 #endif
 #define VER_INTERNAL_NAME_STR       VER_ORIGINAL_FILENAME_STR
 
-#define VER_COPYRIGHT_STR             "Copyright � mjbsoft"
+#define VER_COPYRIGHT_STR             "Copyright \xa9  mjbsoft"
 
 #ifdef _DEBUG
   #define VER_VER_DEBUG             VS_FF_DEBUG

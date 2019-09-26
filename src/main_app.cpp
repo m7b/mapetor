@@ -108,7 +108,7 @@ void Main_App::initLanguageSupport(void)
         m_locale = new wxLocale(m_language);
 
         wxTranslations::Get()->SetLoader(new wxResourceTranslationsLoader);
-        m_locale->AddCatalog(wxT("TMGR_CardCreator"));
+        m_locale->AddCatalog(wxT("mapetor"));
 
         bool ok = m_locale->IsOk();
         if (ok == false)
