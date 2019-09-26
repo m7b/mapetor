@@ -33,6 +33,7 @@ environment:
 
 cache:
   - C:\CPP\extlibs
+  - C:\CPP\compiler
 
 # scripts that run after cloning repository
 install:
@@ -42,8 +43,8 @@ install:
   - IF NOT EXIST C:\CPP\compiler\NUL MKDIR C:\CPP\compiler
   - IF NOT EXIST C:\CPP\tools\NUL MKDIR C:\CPP\tools
   - IF NOT EXIST C:\CPP\extlibs\NUL MKDIR C:\CPP\extlibs
-  - move C:\msys64 C:\CPP\tools
-  - move C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0 C:\CPP\compiler
+  #- move C:\msys64 C:\CPP\tools
+  #- move C:\mingw-w64\x86_64-8.1.0-posix-seh-rt_v6-rev0 C:\CPP\compiler
   - set PATH=C:\Program Files\7-Zip;C:\Program Files (x86)\CMake\bin
   ##
   ## Install Compiler
