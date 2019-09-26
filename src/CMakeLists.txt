@@ -50,13 +50,13 @@ SET_PROPERTY(SOURCE ${PROJECT_SOURCE_DIR}/res/resource.rc APPEND PROPERTY OBJECT
 
 target_link_libraries(
     ${CMAKE_PROJECT_NAME}
-	gui
-	prjprops
+    gui
+    prjprops
     shlwapi
     version
     oleacc
-    gcc
-    msvcrt
+     gcc
+     msvcrt
     -static
     $<$<CONFIG:Release>:-s>
 )
