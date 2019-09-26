@@ -46,6 +46,7 @@ install:
   # Install Pandoc, doxygen, graphviz, UPX, MinGW-w64 --x86 (32bit)
   - cinst pandoc doxygen.install graphviz upx mingw --x86
   - refreshenv
+  - set
 
   # Installing boost & build
 #  - ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
