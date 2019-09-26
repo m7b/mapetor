@@ -49,9 +49,15 @@ install:
   - set
   - set PATH=C:\ProgramData\chocolatey\bin;C:\Program Files\7-Zip;C:\Program Files (x86)\CMake\bin
 #  ##
-#  ## Install Pandoc, doxygen, graphviz, UPX, MinGW-w64 --x86
+#  ## Install Pandoc, doxygen, graphviz, UPX, MinGW-w64 --x86 (32bit)
   - cinst pandoc doxygen.install graphviz upx mingw --x86
   - refreshenv
+#  ##
+#  ## Install gettext
+#  - CD C:\Temp
+#  - ps: Start-FileDownload 'https://github.com/mlocati/gettext-iconv-windows/releases/download/v0.20.1-v1.16/gettext0.20.1-iconv1.16-static-64.zip'
+#  - 7z x gettext0.20.1-iconv1.16-static-64.zip -oC:\CPP\tools\gettext0.20.1-iconv1.16-static-64 -y
+#  - set PATH=%PATH%;C:\CPP\tools\gettext0.20.1-iconv1.16-static-64\bin
   ##
   ## Install Compiler
 #  - CD C:\Temp
@@ -80,12 +86,6 @@ install:
 #  - mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" setup_h
 #  - mingw32-make -j9 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0"
   ##
-#  ##
-#  ## Install gettext
-#  - CD C:\Temp
-#  - ps: Start-FileDownload 'https://github.com/mlocati/gettext-iconv-windows/releases/download/v0.20.1-v1.16/gettext0.20.1-iconv1.16-static-64.zip'
-#  - 7z x gettext0.20.1-iconv1.16-static-64.zip -oC:\CPP\tools\gettext0.20.1-iconv1.16-static-64 -y
-  - set PATH=%PATH%;C:\CPP\tools\gettext0.20.1-iconv1.16-static-64\bin
   
   
   ## start build project
