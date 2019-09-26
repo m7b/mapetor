@@ -78,10 +78,11 @@ install:
   ##
   ##
   ## Install doxygen
+  - ps: choco install doxygen.install
 #  - CD C:\Temp
 #  - ps: Start-FileDownload 'http://doxygen.nl/files/doxygen-1.8.16.windows.bin.zip'
 #  - 7z x doxygen-1.8.16.windows.bin.zip -oC:\CPP\tools\doxygen-1.8.16 -y
-  - set PATH=%PATH%;C:\CPP\tools\doxygen-1.8.16
+#  - set PATH=%PATH%;C:\CPP\tools\doxygen-1.8.16
 #  ##
 #  ## Install graphviz
 #  - CD C:\Temp
@@ -90,11 +91,7 @@ install:
   - set PATH=%PATH%;C:\CPP\tools\graphviz-2.38\release\bin
 #  ##
 #  ## Install UPX
-#  - CD C:\Temp
-#  - ps: Start-FileDownload 'https://github.com/upx/upx/releases/download/v3.95/upx-3.95-win64.zip'
-#  - 7z x upx-3.95-win64.zip -oC:\CPP\tools -y
   - ps: choco install upx
-#  - set PATH=%PATH%;C:\CPP\tools\upx-3.95-win64
 #  ##
 #  ## Install gettext
 #  - CD C:\Temp
