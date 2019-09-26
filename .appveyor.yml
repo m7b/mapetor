@@ -32,7 +32,7 @@ environment:
   MINGW_DIR: C:\CPP\compiler\x86_64-8.1.0-posix-seh-rt_v6-rev0\mingw64\bin
 
 cache:
-  - C:\CPP\extlibs -> appveyor.yml    # or any other file
+  - C:\CPP\extlibs
 
 # scripts that run after cloning repository
 install:
