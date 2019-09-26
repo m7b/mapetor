@@ -82,10 +82,6 @@ install:
 #  ##
 #  ## Install graphviz
   - ps: choco install graphviz
-#  - CD C:\Temp
-#  - ps: Start-FileDownload 'http://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.zip'
-#  - 7z x graphviz-2.38.zip -oC:\CPP\tools\graphviz-2.38 -y
-#  - set PATH=%PATH%;C:\CPP\tools\graphviz-2.38\release\bin
 #  ##
 #  ## Install UPX
   - ps: choco install upx
@@ -97,10 +93,11 @@ install:
   - set PATH=%PATH%;C:\CPP\tools\gettext0.20.1-iconv1.16-static-64\bin
 #  ##
 #  ## Install Pandoc
+  - cinst pandoc
 #  - CD C:\Temp
 #  - ps: Start-FileDownload 'https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-windows-x86_64.zip'
 #  - 7z x pandoc-2.7.3-windows-x86_64.zip -oC:\CPP\tools -y
-  - set PATH=%PATH%;C:\CPP\tools\pandoc-2.7.3-windows-x86_64
+#  - set PATH=%PATH%;C:\CPP\tools\pandoc-2.7.3-windows-x86_64
   
   
   ## start build project
