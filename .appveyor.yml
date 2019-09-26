@@ -32,7 +32,7 @@ environment:
   MINGW_DIR: C:\CPP\compiler\i686-8.1.0-release-posix-dwarf-rt_v6-rev0\mingw32\bin
 
 cache:
-  - C:\CPP\extlibs -> appveyor.yml
+#  - C:\CPP\extlibs -> appveyor.yml
 
 # scripts that run after cloning repository
 install:
@@ -48,6 +48,7 @@ install:
   ##
   ## Install Compiler
   - CD C:\Temp
+  - if exist <insert file name here> <action>
   - ps: Start-FileDownload 'https://netix.dl.sourceforge.net/project/mingw-w64/Toolchains%20targetting%20Win32/Personal%20Builds/mingw-builds/8.1.0/threads-posix/dwarf/i686-8.1.0-release-posix-dwarf-rt_v6-rev0.7z'
   - 7z x i686-8.1.0-release-posix-dwarf-rt_v6-rev0.7z -oC:\CPP\compiler\i686-8.1.0-release-posix-dwarf-rt_v6-rev0 -y
   - set PATH=%MINGW_DIR%;%PATH%
