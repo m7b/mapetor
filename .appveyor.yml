@@ -54,14 +54,14 @@ install:
   ##
   ## Installing msys/boost
   ##- C:\CPP\tools\msys64\usr\bin\bash -l -c "pacman -Sy --noconfirm mingw64/mingw-w64-x86_64-boost 2>&1"
-  - CD C:\Temp
-  - ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
-  - 7z x boost_1_70_0.7z -oC:\CPP\extlibs -y
-  - cd C:\CPP\extlibs\boost_1_70_0
-  - CALL bootstrap gcc
-  - b2 --clean-all
-  - b2 headers
-  - b2 toolset=gcc address-model=32 cxxflags=-std=gnu++17 --with-filesystem --with-date_time --with-test
+#  - CD C:\Temp
+#  - ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
+#  - 7z x boost_1_70_0.7z -oC:\CPP\extlibs -y
+#  - cd C:\CPP\extlibs\boost_1_70_0
+#  - CALL bootstrap gcc
+#  #- b2 --clean-all
+#  - b2 headers
+#  - b2 toolset=gcc address-model=32 cxxflags=-std=gnu++17 --with-filesystem --with-date_time --with-test
   ##
   ## Installing wxWidgets
 #  - CD C:\Temp
@@ -69,47 +69,48 @@ install:
 #  - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxwidgets-3.0.4 -y
 #  - cd C:\CPP\extlibs\wxwidgets-3.0.4\build\msw
 #  - mingw32-make --version
+#  #- mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" clean
 #  - mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" setup_h
 #  - mingw32-make -j9 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0"
   ##
   ##
   ## Install doxygen
-#  - CD C:\Temp
-#  - ps: Start-FileDownload 'http://doxygen.nl/files/doxygen-1.8.16.windows.bin.zip'
-#  - 7z x doxygen-1.8.16.windows.bin.zip -oC:\CPP\tools\doxygen-1.8.16 -y
-#  - set PATH=%PATH%;C:\CPP\tools\doxygen-1.8.16
-#  ##
-#  ## Install graphviz
-#  - CD C:\Temp
-#  - ps: Start-FileDownload 'http://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.zip'
-#  - 7z x graphviz-2.38.zip -oC:\CPP\tools\graphviz-2.38 -y
-#  - set PATH=%PATH%;C:\CPP\tools\graphviz-2.38\release\bin
-#  ##
-#  ## Install UPX
-#  - CD C:\Temp
-#  - ps: Start-FileDownload 'https://github.com/upx/upx/releases/download/v3.95/upx-3.95-win64.zip'
-#  - 7z x upx-3.95-win64.zip -oC:\CPP\tools -y
-#  - set PATH=%PATH%;C:\CPP\tools\upx-3.95-win64
-#  ##
-#  ## Install gettext
-#  - CD C:\Temp
-#  - ps: Start-FileDownload 'https://github.com/mlocati/gettext-iconv-windows/releases/download/v0.20.1-v1.16/gettext0.20.1-iconv1.16-static-64.zip'
-#  - 7z x gettext0.20.1-iconv1.16-static-64.zip -oC:\CPP\tools\gettext0.20.1-iconv1.16-static-64 -y
-#  - set PATH=%PATH%;C:\CPP\tools\gettext0.20.1-iconv1.16-static-64\bin
-#  ##
-#  ## Install Pandoc
-#  - CD C:\Temp
-#  - ps: Start-FileDownload 'https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-windows-x86_64.zip'
-#  - 7z x pandoc-2.7.3-windows-x86_64.zip -oC:\CPP\tools -y
-#  - set PATH=%PATH%;C:\CPP\tools\pandoc-2.7.3-windows-x86_64
+  - CD C:\Temp
+  - ps: Start-FileDownload 'http://doxygen.nl/files/doxygen-1.8.16.windows.bin.zip'
+  - 7z x doxygen-1.8.16.windows.bin.zip -oC:\CPP\tools\doxygen-1.8.16 -y
+  - set PATH=%PATH%;C:\CPP\tools\doxygen-1.8.16
+  ##
+  ## Install graphviz
+  - CD C:\Temp
+  - ps: Start-FileDownload 'http://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.zip'
+  - 7z x graphviz-2.38.zip -oC:\CPP\tools\graphviz-2.38 -y
+  - set PATH=%PATH%;C:\CPP\tools\graphviz-2.38\release\bin
+  ##
+  ## Install UPX
+  - CD C:\Temp
+  - ps: Start-FileDownload 'https://github.com/upx/upx/releases/download/v3.95/upx-3.95-win64.zip'
+  - 7z x upx-3.95-win64.zip -oC:\CPP\tools -y
+  - set PATH=%PATH%;C:\CPP\tools\upx-3.95-win64
+  ##
+  ## Install gettext
+  - CD C:\Temp
+  - ps: Start-FileDownload 'https://github.com/mlocati/gettext-iconv-windows/releases/download/v0.20.1-v1.16/gettext0.20.1-iconv1.16-static-64.zip'
+  - 7z x gettext0.20.1-iconv1.16-static-64.zip -oC:\CPP\tools\gettext0.20.1-iconv1.16-static-64 -y
+  - set PATH=%PATH%;C:\CPP\tools\gettext0.20.1-iconv1.16-static-64\bin
+  ##
+  ## Install Pandoc
+  - CD C:\Temp
+  - ps: Start-FileDownload 'https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-windows-x86_64.zip'
+  - 7z x pandoc-2.7.3-windows-x86_64.zip -oC:\CPP\tools -y
+  - set PATH=%PATH%;C:\CPP\tools\pandoc-2.7.3-windows-x86_64
   
   
   ## start build project
-#  - cd %APPVEYOR_BUILD_FOLDER%
-#  - mkdir build
-#  - cd build
-#  - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
-#  - cmake --build .
+  - cd %APPVEYOR_BUILD_FOLDER%
+  - mkdir build
+  - cd build
+  - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
+  - cmake --build .
 #  - cd test
 #  - ctest
 
