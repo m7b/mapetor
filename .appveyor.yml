@@ -92,7 +92,8 @@ install:
 #  - CD C:\Temp
 #  - ps: Start-FileDownload 'https://github.com/upx/upx/releases/download/v3.95/upx-3.95-win64.zip'
 #  - 7z x upx-3.95-win64.zip -oC:\CPP\tools -y
-  - set PATH=%PATH%;C:\CPP\tools\upx-3.95-win64
+  - ps: choco install upx
+#  - set PATH=%PATH%;C:\CPP\tools\upx-3.95-win64
 #  ##
 #  ## Install gettext
 #  - CD C:\Temp
