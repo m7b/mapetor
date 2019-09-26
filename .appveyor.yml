@@ -45,24 +45,24 @@ install:
 
   # Install Pandoc, doxygen, graphviz, UPX, MinGW-w64 --x86 (32bit)
   - cinst pandoc doxygen.install graphviz upx mingw --x86
-  #- refreshenv
+  - refreshenv
 
   # Installing boost & build
-  - ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
-  - 7z x boost_1_70_0.7z -oC:\CPP\extlibs -y
-  - cd C:\CPP\extlibs\boost_1_70_0
-  - CALL bootstrap gcc
-  #- b2 --clean-all
-  - b2 headers
-  - b2 toolset=gcc address-model=32 cxxflags=-std=gnu++17 --with-filesystem --with-date_time --with-test
+#  - ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
+#  - 7z x boost_1_70_0.7z -oC:\CPP\extlibs -y
+#  - cd C:\CPP\extlibs\boost_1_70_0
+#  - CALL bootstrap gcc
+#  #- b2 --clean-all
+#  - b2 headers
+#  - b2 toolset=gcc address-model=32 cxxflags=-std=gnu++17 --with-filesystem --with-date_time --with-test
 
   # Installing wxWidgets & build
-  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
-  - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxwidgets-3.0.4 -y
-  - cd C:\CPP\extlibs\wxwidgets-3.0.4\build\msw
-  #- mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" clean
-  - mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" setup_h
-  - mingw32-make -j9 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0"
+#  - ps: Start-FileDownload 'https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.7z'
+#  - 7z x wxWidgets-3.0.4.7z -oC:\CPP\extlibs\wxwidgets-3.0.4 -y
+#  - cd C:\CPP\extlibs\wxwidgets-3.0.4\build\msw
+#  #- mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" clean
+#  - mingw32-make -j1 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0" setup_h
+#  - mingw32-make -j9 -f makefile.gcc BUILD=release SHARED=0 UNICODE=1 CXXFLAGS="-static -mthreads -pipe -std=gnu++17 -m32 -Wall -O0 -s -DwxDEBUG_LEVEL=0"
  
   # start build project
   - cd %APPVEYOR_BUILD_FOLDER%
