@@ -22,4 +22,11 @@ make
 
 ### Dependency
 
-This application requires boost.
+To compile this application it requires ...
+ - boost
+ - wxWidgets
+ - Doxygen
+ - graphviz
+ - UPX
+ - gettext
+ - Pandoc

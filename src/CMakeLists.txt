@@ -1,27 +1,3 @@
 add_subdirectory(gui)
 add_subdirectory(helpers)
 add_subdirectory(prjprops)
-
-
-
-# generate CHANGELOG from *.md to *.html (on change)
-FIND_PROGRAM(PANDOC_EXECUTABLE pandoc.exe)
-SET(CHANGELOG_MD   ${PROJECT_SOURCE_DIR}/CHANGELOG.md)
-SET(CHANGELOG_HTML ${PROJECT_SOURCE_DIR}/res/CHANGELOG.html)
-ADD_CUSTOM_COMMAND(
-	OUTPUT ${CHANGELOG_HTML}
-	COMMAND ${PANDOC_EXECUTABLE} ${CHANGELOG_MD} -o ${CHANGELOG_HTML}
-	DEPENDS ${CHANGELOG_MD}
-)
-ADD_CUSTOM_TARGET(
-	changelog
-	DEPENDS ${CHANGELOG_HTML}
-	COMMENT "Create changelog file (md to html)"
-)
-#SET_PROPERTY(SOURCE ${PROJECT_SOURCE_DIR}/res/resource.rc APPEND PROPERTY OBJECT_DEPENDS ${CHANGELOG_HTML})
-
-
-
-
-
-

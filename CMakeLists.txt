@@ -48,7 +48,25 @@ add_executable(
     src/main_app.cpp
     ${PROJECT_SOURCE_DIR}/res/resource.rc
 )
-SET_PROPERTY(SOURCE ${PROJECT_SOURCE_DIR}/res/resource.rc APPEND PROPERTY OBJECT_DEPENDS ${CHANGELOG_HTML})
+
+
+# generate CHANGELOG from *.md to *.html (on change)
+FIND_PROGRAM(PANDOC_EXECUTABLE pandoc.exe)
+SET(CHANGELOG_MD   ${PROJECT_SOURCE_DIR}/CHANGELOG.md)
+SET(CHANGELOG_HTML ${CMAKE_CURRENT_BINARY_DIR}/CHANGELOG.html)
+ADD_CUSTOM_COMMAND(
+    OUTPUT ${CHANGELOG_HTML}
+    COMMAND ${PANDOC_EXECUTABLE} ${CHANGELOG_MD} -o ${CHANGELOG_HTML}
+    DEPENDS ${CHANGELOG_MD}
+)
+ADD_CUSTOM_TARGET(
+    changelog
+    DEPENDS ${CHANGELOG_HTML}
+    COMMENT "Create changelog file (md to html)"
+)
+SET_PROPERTY(SOURCE res/resource.rc APPEND PROPERTY OBJECT_DEPENDS ${CHANGELOG_HTML})
+
+
 
 # target compile options
 target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Debug>:-g>)
