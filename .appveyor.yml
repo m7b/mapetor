@@ -34,6 +34,7 @@ environment:
 cache:
   - C:\CPP\extlibs
   - C:\CPP\compiler
+  - C:\CPP\tools
 
 # scripts that run after cloning repository
 install:
