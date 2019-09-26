@@ -2,6 +2,9 @@
 
 SET PATH_TO_BOOST=W:\boost_1_70_0
 
+REM Extend search path for this batch file
+SET PATH=%PATH%;Z:\bin
+
 REM libs/filesystem
 REM libs/date_time
 REM libs/system
