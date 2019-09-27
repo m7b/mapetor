@@ -45,6 +45,10 @@ matrix:
     compiler: gcc
 
     before_install:
+      - sudo add-apt-repository ppa:alexlarsson/flatpak
+      - sudo apt update
+      - sudo apt install flatpak
+      - flatpak install https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v3.9.0/wxformbuilder.flatpak
       # Install latest boost
       - wget -O boost.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.70.0/boost_1_70_0.tar.bz2/download
       - tar xjf boost.tar.bz2
