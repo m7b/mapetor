@@ -4,7 +4,9 @@ C_wxMainFrame::C_wxMainFrame( wxWindow* parent )
 :
 C_wxfbMainFrame( parent )
 {
-    SetIcon(wxICON(MAINICON));
+    #ifdef _WIN32
+        SetIcon(wxICON(MAINICON));
+    #endif
     SetTitle(VER_PRODUCTNAME_STR);
 
     m_length = .0;
@@ -129,7 +131,9 @@ void C_wxMainFrame::write_settings(void)
 
 void C_wxMainFrame::get_inkscape_file_content(void)
 {
-    get_resource_file(m_inkscape_file_content, L"INKSCAPE");
+    #ifdef _WIN32
+        get_resource_file(m_inkscape_file_content, L"INKSCAPE");
+    #endif
 }
 
 void C_wxMainFrame::shipout_inkscape_file(void)
@@ -357,7 +361,9 @@ void C_wxMainFrame::OnButtonClick_fct1( wxCommandEvent& event )
 
     //create *.mscript
     std::string maperitive_script;
-    get_resource_file(maperitive_script, L"MAPSCR1");
+    #ifdef _WIN32
+        get_resource_file(maperitive_script, L"MAPSCR1");
+    #endif
 
     //customize script
     replace_all(maperitive_script, "load-source",
@@ -392,7 +398,9 @@ void C_wxMainFrame::OnButtonClick_create_territory_card( wxCommandEvent& event )
 
     //create *.mscript
     std::string maperitive_script;
-    get_resource_file(maperitive_script, L"MAPSCR1");
+    #ifdef _WIN32
+        get_resource_file(maperitive_script, L"MAPSCR1");
+    #endif
     //customize script
     replace_all(maperitive_script, "load-source",  "load-source " +
                 m_filePicker_osm_source->GetPath().ToStdString());
@@ -443,7 +451,9 @@ void C_wxMainFrame::OnFileMenuNew( wxCommandEvent& event )
     m_project_file = openFileDialog.GetPath().ToStdString();
     m_textCtrl_headline->SetValue(m_project_file);
 
-    get_resource_file(m_project_file_content, L"PRJBATCH");
+    #ifdef _WIN32
+        get_resource_file(m_project_file_content, L"PRJBATCH");
+    #endif
 }
 
 void C_wxMainFrame::OnFileMenuOpen( wxCommandEvent& event )
