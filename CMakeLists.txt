@@ -86,9 +86,11 @@ target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -Wall)
 
 # target compile definitions
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC EXE_NAME=${CMAKE_PROJECT_NAME})
+IF(WIN32)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __GNUWIN32__)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __WXMSW__)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC _WIN32_WINNT=0x0601)
+ENDIF(WIN32)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Release>:wxDEBUG_LEVEL=0>)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Debug>:wxDEBUG_LEVEL=1>)
 
