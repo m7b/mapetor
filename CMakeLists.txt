@@ -29,8 +29,7 @@ endif(WIN32)
 SET(Boost_USE_STATIC_LIBS        ON)
 SET(Boost_USE_MULTITHREADED      ON)
 SET(Boost_USE_STATIC_RUNTIME    OFF)
-#FIND_PACKAGE(Boost 1.70.0 REQUIRED filesystem date_time)
-FIND_PACKAGE(Boost REQUIRED filesystem date_time)
+FIND_PACKAGE(Boost 1.70.0 REQUIRED filesystem date_time)
 
 
 include_directories(

@@ -31,17 +31,20 @@ matrix:
         sources:
           - ubuntu-toolchain-r-test
         packages:
-          - libboost-all-dev
+          #- libboost-all-dev
           - libwxgtk3.0-dev
 
     compiler: gcc
 
     before_install:
-      - sudo apt-cache search libboost
       # Install a supported cmake version (>= 3.4.3)
-      #- wget -O cmake.sh https://github.com/Kitware/CMake/releases/download/v3.15.3/cmake-3.15.3-Linux-x86_64.sh
-      #- sudo sh cmake.sh --skip-license --exclude-subdir --prefix=/usr/local
-      - cmake --version
+      - wget -O boost.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.70.0/boost_1_70_0.tar.bz2/download
+      - tar xjf boost.tar.bz2
+      - ls
+      - cd boost_1_70_0
+      - sudo ./bootstrap.sh
+      - sudo ./b2 headers
+      - sudo ./b2 cxxflags=-std=gnu++17 --with-filesystem --with-date_time --with-test
     
     script:
       - cmake -DCMAKE_BUILD_TYPE=Release ..
