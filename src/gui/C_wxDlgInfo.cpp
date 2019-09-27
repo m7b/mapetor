@@ -52,6 +52,7 @@ C_wxDlgInfo::C_wxDlgInfo(wxWindow* parent)
 
 void C_wxDlgInfo::SetImage(void)
 {
+#ifdef _WIN32
     wxIconBundle bundle = LoadwxIconBundleFromWindowsResource("MAINICON");
     unsigned int ico_to_show = 2;
     if (bundle.GetIconCount() >= ico_to_show)
@@ -60,10 +61,9 @@ void C_wxDlgInfo::SetImage(void)
     }
     else
     {
-        #ifdef _WIN32
-            m_bitmap->SetIcon(wxICON(MAINICON));
-        #endif
+        m_bitmap->SetIcon(wxICON(MAINICON));
     }
+#endif
 }
 
 
