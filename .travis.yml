@@ -33,6 +33,8 @@ matrix:
         packages:
           #- libboost-all-dev
           - libwxgtk3.0-dev
+          - doxygen
+          - graphviz
 
     compiler: gcc
 
