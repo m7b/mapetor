@@ -60,7 +60,9 @@ void C_wxDlgInfo::SetImage(void)
     }
     else
     {
-        m_bitmap->SetIcon(wxICON(MAINICON));
+        #ifdef _WIN32
+            m_bitmap->SetIcon(wxICON(MAINICON));
+        #endif
     }
 }
 
