@@ -132,6 +132,7 @@ int intake(std::string &content, const std::string key, const std::string &recor
 }
 
 
+#ifdef _WIN32
 void test(void)
 {
     write_resource_file(L"CURL_BINARY", "curl.exe");
@@ -141,3 +142,4 @@ void test(void)
     size_t str_hash = hash_fn(str);
 
 }
+#endif
