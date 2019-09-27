@@ -107,7 +107,9 @@ void Main_App::initLanguageSupport(void)
     {
         m_locale = new wxLocale(m_language);
 
+        #ifdef _WIN32
         wxTranslations::Get()->SetLoader(new wxResourceTranslationsLoader);
+        #endif
         m_locale->AddCatalog(wxT("mapetor"));
 
         bool ok = m_locale->IsOk();
