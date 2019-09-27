@@ -72,6 +72,7 @@ void read_from_file(std::string &content, const std::string path_file)
 }
 
 
+#ifdef _WIN32
 void get_resource_file(std::string &content, const wchar_t *identifier)
 {
     HRSRC a_resource = FindResource(0, identifier, RT_RCDATA);
@@ -113,7 +114,7 @@ void write_resource_file(const wchar_t *identifier, const std::string path_file)
         }
     }
 }
-
+#endif
 
 int abstract(std::string &content, const std::string key, std::string &abstraction)
 {
