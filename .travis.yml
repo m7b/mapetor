@@ -40,9 +40,10 @@ matrix:
       # Install a supported cmake version (>= 3.4.3)
       - wget -O cmake.sh https://github.com/Kitware/CMake/releases/download/v3.15.3/cmake-3.15.3-Linux-x86_64.sh
       - sudo sh cmake.sh --skip-license --exclude-subdir --prefix=/usr/local
+      - cmake --version
     
     script:
       - mkdir build
       - cd build
-      - cmake -DCI_BUILD:BOOL=ON -DCOVERAGE:BOOL=OFF -DCMAKE_BUILD_TYPE=Release ..
+      - cmake ..
       - make
