@@ -1,3 +1,4 @@
+#undef wxSIZE_T_IS_UINT
 #include "gui/C_wxDlgInfo.h"
 
 
