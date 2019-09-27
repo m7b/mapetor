@@ -3,7 +3,10 @@
 
 #include <boost/process.hpp>
 
-#include <windows.h>
+#ifdef _WIN32
+    #include <windows.h>
+#endif
+
 #include <string>
 #include <fstream>
 #include <sstream>
@@ -25,8 +28,11 @@ void replace_all(std::string &content, const std::string to_replace, const std::
 void write_to_file_binary(const std::string &content, const std::string path_file);
 void write_to_file(const std::string &content, const std::string path_file);
 void read_from_file(std::string &content, const std::string path_file);
-void get_resource_file(std::string &content, const wchar_t *identifier);
-void write_resource_file(const wchar_t *identifier, const std::string path_file);
+
+#ifdef _WIN32
+    void get_resource_file(std::string &content, const wchar_t *identifier);
+    void write_resource_file(const wchar_t *identifier, const std::string path_file);
+#endif
 
 int abstract(std::string &content, const std::string key, std::string &abstraction);
 int intake(std::string &content, const std::string key, const std::string &record);
