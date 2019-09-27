@@ -31,8 +31,10 @@ C_wxDlgInfo::C_wxDlgInfo(wxWindow* parent)
     :
     InfoDialog( parent )
 {
-    SetIcon(wxICON(MAINICON));
-    SetImage();
+    #ifdef _WIN32
+        SetIcon(wxICON(MAINICON));
+        SetImage();
+    #endif
 
     m_staticTextName->SetLabel(VER_PRODUCTNAME_STR);
     m_staticTextFileVersion->SetLabel(wxString::Format("v%s", VER_FILE_VERSION_STR));
@@ -95,7 +97,9 @@ void C_wxDlgInfo::SetChangelogText(void)
 std::string C_wxDlgInfo::GetChangelog(void)
 {
     std::string changelog;
-    get_resource_file(changelog, L"CHANGELOG");
+    #ifdef _WIN32
+        get_resource_file(changelog, L"CHANGELOG");
+    #endif
     return changelog;
 }
 

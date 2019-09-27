@@ -2,6 +2,7 @@
 #define WXICONBUNDLE_RESLOADER_H_DEFINED
 
 #include <wx/wx.h>
+#include <wx/iconbndl.h>
 
 /*
 For MSW: Loads individual icons with different resolutions stored as ICON resource in the MSW resource file.
