@@ -2,7 +2,11 @@
 
 #ifndef __WXMSW__
 // return an empty bundle for non-MSW OSes
+#ifdef _WIN32
 wxIconBundle LoadwxIconBundleFromWindowsResource(const wxString& name, WXHINSTANCE module = 0)
+#else
+wxIconBundle LoadwxIconBundleFromWindowsResource(const wxString& name)
+#endif
 {
     return wxIconBundle();
 }
