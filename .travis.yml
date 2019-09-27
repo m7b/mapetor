@@ -32,13 +32,13 @@ matrix:
           - ubuntu-toolchain-r-test
         packages:
           #- libboost-all-dev
-          #- libwxgtk3.0-dev:i386
-          - libwxgtk3.0-dev
+          - libwxgtk3.0-dev:i386
+          #- libwxgtk3.0-dev
           - doxygen
           - graphviz
           - pandoc
-          #- libc6-dev-i386
-          - libc6-dev
+          - libc6-dev-i386
+          #- libc6-dev
           - gcc-multilib
           - g++-multilib
 
