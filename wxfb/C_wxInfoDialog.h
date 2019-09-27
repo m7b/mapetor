@@ -9,7 +9,9 @@
 #define __C_WXINFODIALOG_H__
 
 #include <wx/artprov.h>
-#include <wx/xrc/xmlres.h>
+#ifdef _WIN32
+	#include <wx/xrc/xmlres.h>
+#endif
 #include <wx/intl.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
