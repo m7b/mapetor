@@ -27,7 +27,9 @@
 #include <wx/richtext/richtextctrl.h>
 #include <wx/sizer.h>
 #include <wx/panel.h>
-#include <wx/html/htmlwin.h>
+#ifdef _WIN32
+	#include <wx/html/htmlwin.h>
+#endif
 #include <wx/notebook.h>
 #include <wx/statline.h>
 #include <wx/gbsizer.h>
