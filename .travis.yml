@@ -45,6 +45,7 @@ matrix:
       - sudo ./bootstrap.sh
       - sudo ./b2 headers
       - sudo ./b2 cxxflags=-std=gnu++17 --with-filesystem --with-date_time --with-test
+      - sudo ./b2 install
       - cd ..
     
     script:
