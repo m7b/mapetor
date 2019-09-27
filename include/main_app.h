@@ -10,7 +10,9 @@
 #ifndef MAIN_APP_H
 #define MAIN_APP_H
 
+#ifdef _WIN32
 #include <winsock2.h>
+#endif
 #include <wx/app.h>
 #include <wx/cmdline.h>
 #include <wx/msgdlg.h>
