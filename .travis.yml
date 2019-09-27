@@ -48,6 +48,7 @@ matrix:
       - sudo add-apt-repository ppa:alexlarsson/flatpak -y
       - sudo apt update
       - sudo apt install flatpak
+      - sudo flatpak install flathub org.freedesktop.Platform/x86_64/18.08
       - wget https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v3.9.0/wxformbuilder.flatpak
       - sudo flatpak install wxformbuilder.flatpak
       # Install latest boost
