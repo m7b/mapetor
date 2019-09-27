@@ -45,7 +45,7 @@ matrix:
     compiler: gcc
 
     before_install:
-      - sudo add-apt-repository ppa:alexlarsson/flatpak
+      - sudo add-apt-repository ppa:alexlarsson/flatpak -y
       - sudo apt update
       - sudo apt install flatpak
       - flatpak install https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v3.9.0/wxformbuilder.flatpak
