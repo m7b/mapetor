@@ -63,5 +63,7 @@ matrix:
       - cd ..
     
     script:
+      - wxformbuilder -g wxfb/wxfb_info_dialog.fbp
+      - wxformbuilder -g wxfb/wxfb_main_frame.fbp
       - cmake -DCMAKE_BUILD_TYPE=Release ..
       - make
