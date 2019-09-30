@@ -56,8 +56,7 @@ matrix:
       - sudo flatpak install --assumeyes wxformbuilder.flatpak
       #- sudo xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
       - sudo flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
-      - xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
-      - xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
+      - sudo flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
       #
       # Install latest boost
       - wget -O boost.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.70.0/boost_1_70_0.tar.bz2/download
