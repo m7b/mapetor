@@ -77,7 +77,7 @@ matrix:
       #- mkdir build-gtk
       #- cd build-gtk
       #- ../configure --enable-unicode --disable-shared
-      - configure --enable-unicode --disable-shared
+      - ./configure --enable-unicode --disable-shared
       - make -j4
       - sudo make install
       #- cd ..
