@@ -22,6 +22,29 @@ FIND_PACKAGE(wxWidgets REQUIRED richtext adv html core xml base)
 INCLUDE("${wxWidgets_USE_FILE}")
 
 
+IF (NOT WIN32)
+    find_program(WX_CONFIG
+            NAMES wx-config-3.0 wx-config-2.9 wx-config
+            PATHS
+                /usr/bin
+                /usr/local/bin
+        )
+
+    execute_process(
+        COMMAND ${WX_CONFIG} "--cxxflags"
+        OUTPUT_VARIABLE WX_INC_OPTS
+    )
+    MESSAGE("WX Inc: ${WX_INC_OPTS}")
+
+    execute_process(
+        COMMAND ${WX_CONFIG} "--libs" "std,aui"
+        OUTPUT_VARIABLE WX_LIB_OPTS
+    )
+    MESSAGE("WX Lib: ${WX_LIB_OPTS}")
+ENDIF(NOT WIN32)
+
+
+
 ## Boost
 #SET(Boost_DEBUG ON)
 IF(WIN32)
@@ -83,8 +106,8 @@ target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Debug>:-O0>)
 target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Release>:-O3>)
 target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC $<$<COMPILE_LANGUAGE:CXX>:-std=gnu++17>)
 IF(WIN32)
-target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -m32)
-target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -mthreads)
+    target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -m32)
+    target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -mthreads)
 ENDIF(WIN32)
 target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -pipe)
 target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -Wall)
@@ -92,11 +115,11 @@ target_compile_options(${CMAKE_PROJECT_NAME} PUBLIC -Wall)
 # target compile definitions
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC EXE_NAME=${CMAKE_PROJECT_NAME})
 IF(WIN32)
-target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __GNUWIN32__)
-target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __WXMSW__)
-target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC _WIN32_WINNT=0x0601)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __GNUWIN32__)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __WXMSW__)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC _WIN32_WINNT=0x0601)
 ELSE()
-target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __WXGTK3__)
+    target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC __WXGTK3__)
 ENDIF(WIN32)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Release>:wxDEBUG_LEVEL=0>)
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Debug>:wxDEBUG_LEVEL=1>)
