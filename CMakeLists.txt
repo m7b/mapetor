@@ -97,6 +97,7 @@ target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Release>:wxDE
 target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC $<$<CONFIG:Debug>:wxDEBUG_LEVEL=1>)
 
 
+IF(WIN32)
 target_link_libraries(
     ${CMAKE_PROJECT_NAME}
     gui
@@ -107,6 +108,15 @@ target_link_libraries(
     -static
     $<$<CONFIG:Release>:-s>
 )
+ELSE()
+target_link_libraries(
+    ${CMAKE_PROJECT_NAME}
+    gui
+    prjprops
+    -static
+    $<$<CONFIG:Release>:-s>
+)
+ENDIF(WIN32)
 
 
 
