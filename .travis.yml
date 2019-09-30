@@ -71,5 +71,6 @@ matrix:
     
     script:
       - wx-config --list
+      - ls -l /usr/lib/x86_64-linux-gnu
       - cmake -DCMAKE_BUILD_TYPE=Release ..
       - make
