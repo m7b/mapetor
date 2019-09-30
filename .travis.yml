@@ -54,9 +54,9 @@ matrix:
       - sudo flatpak install --assumeyes wxformbuilder.flatpak
       #- ls /var/lib/flatpak/app/org.wxformbuilder.wxFormBuilder
       - ls /var/lib/flatpak/exports/bin
-      - ~/.local/share/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
-      - /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
+      #- ~/.local/share/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
       - sudo /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
+      - sudo /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
       - sudo flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
       - wxformbuilder -g wxfb/wxfb_info_dialog.fbp
       - wxformbuilder -g wxfb/wxfb_main_frame.fbp
