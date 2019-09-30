@@ -54,15 +54,11 @@ matrix:
       - sudo flatpak install --assumeyes flathub org.freedesktop.Platform//18.08
       - wget https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v3.9.0/wxformbuilder.flatpak
       - sudo flatpak install --assumeyes wxformbuilder.flatpak
-      #- ls /var/lib/flatpak/app/org.wxformbuilder.wxFormBuilder
-      - ls /var/lib/flatpak/exports/bin
-      - echo $DISPLAY
-      #- ~/.local/share/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
-      - sudo xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
-      - sudo /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
-      - sudo flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
-      - wxformbuilder -g wxfb/wxfb_info_dialog.fbp
-      - wxformbuilder -g wxfb/wxfb_main_frame.fbp
+      #- sudo xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
+      - flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
+      - xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
+      - xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
+      #
       # Install latest boost
       - wget -O boost.tar.bz2 https://sourceforge.net/projects/boost/files/boost/1.70.0/boost_1_70_0.tar.bz2/download
       - tar xjf boost.tar.bz2
