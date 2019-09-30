@@ -34,19 +34,21 @@ matrix:
           - ubuntu-toolchain-r-test
         packages:
           #- libboost-all-dev
-          - libwxgtk3.0-dev:i386
-          #- libwxgtk3.0-dev
+          #- libwxgtk3.0-dev:i386
+          - libwxgtk3.0-dev
           - doxygen
           - graphviz
           - pandoc
-          - libc6-dev-i386
-          #- libc6-dev
+          #- libc6-dev-i386
+          - libc6-dev
           - gcc-multilib
           - g++-multilib
 
     compiler: gcc
 
     before_install:
+      #
+      # Install latest wxFormBuilder
       - sudo add-apt-repository ppa:alexlarsson/flatpak -y
       - sudo apt update
       - sudo apt install flatpak
@@ -54,7 +56,6 @@ matrix:
       - sudo flatpak install --assumeyes flathub org.freedesktop.Platform//18.08
       - wget https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v3.9.0/wxformbuilder.flatpak
       - sudo flatpak install --assumeyes wxformbuilder.flatpak
-      #- sudo xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
       - sudo flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
       - sudo flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
       #
