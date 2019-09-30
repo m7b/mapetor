@@ -74,13 +74,11 @@ matrix:
       - wget -O wxWidgets-3.0.4.tar.bz2 https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.tar.bz2
       - tar xjf wxWidgets-3.0.4.tar.bz2
       - cd wxWidgets-3.0.4
-      #- mkdir build-gtk
-      #- cd build-gtk
-      #- ../configure --enable-unicode --disable-shared
-      - ./configure --enable-unicode --disable-shared
+      - mkdir build-gtk
+      - cd build-gtk
+      - ../configure --with-gtk --enable-unicode --disable-shared
       - make -j4
       - sudo make install
-      #- cd ..
       
     
     script:
