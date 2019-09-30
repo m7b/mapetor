@@ -56,7 +56,7 @@ matrix:
       - ls /var/lib/flatpak/exports/bin
       - echo $DISPLAY
       #- ~/.local/share/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
-      - sudo /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
+      - sudo xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
       - sudo /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
       - sudo flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
       - wxformbuilder -g wxfb/wxfb_info_dialog.fbp
