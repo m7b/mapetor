@@ -5,6 +5,8 @@
 #
 language: cpp
 dist: xenial
+services:
+  - xvfb
 
 #
 # Build Dependencies

@@ -1,17 +1,14 @@
 ///////////////////////////////////////////////////////////////////////////
-// C++ code generated with wxFormBuilder (version Aug  8 2018)
+// C++ code generated with wxFormBuilder (version Jun 13 2019)
 // http://www.wxformbuilder.org/
 //
 // PLEASE DO *NOT* EDIT THIS FILE!
 ///////////////////////////////////////////////////////////////////////////
 
-#ifndef __C_WXINFODIALOG_H__
-#define __C_WXINFODIALOG_H__
+#pragma once
 
 #include <wx/artprov.h>
-#ifdef _WIN32
-	#include <wx/xrc/xmlres.h>
-#endif
+#include <wx/xrc/xmlres.h>
 #include <wx/intl.h>
 #include <wx/bitmap.h>
 #include <wx/image.h>
@@ -27,9 +24,7 @@
 #include <wx/richtext/richtextctrl.h>
 #include <wx/sizer.h>
 #include <wx/panel.h>
-#ifdef _WIN32
-	#include <wx/html/htmlwin.h>
-#endif
+#include <wx/html/htmlwin.h>
 #include <wx/notebook.h>
 #include <wx/statline.h>
 #include <wx/gbsizer.h>
@@ -41,10 +36,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Class InfoDialog
 ///////////////////////////////////////////////////////////////////////////////
-class InfoDialog : public wxDialog 
+class InfoDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxBoxSizer* m_bSizer;
 		wxPanel* m_panel;
@@ -63,17 +58,16 @@ class InfoDialog : public wxDialog
 		wxHtmlWindow* m_htmlWinChangelog;
 		wxStaticText* m_staticTextFileVersion;
 		wxStaticLine* m_staticline1;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnHtmlLinkClickedChangelog( wxHtmlLinkEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		InfoDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Information"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 415,350 ), long style = wxDEFAULT_DIALOG_STYLE ); 
+
+		InfoDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Information"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 415,350 ), long style = wxDEFAULT_DIALOG_STYLE );
 		~InfoDialog();
-	
+
 };
 
-#endif //__C_WXINFODIALOG_H__
