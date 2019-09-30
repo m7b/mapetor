@@ -55,7 +55,7 @@ matrix:
       - wget https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v3.9.0/wxformbuilder.flatpak
       - sudo flatpak install --assumeyes wxformbuilder.flatpak
       #- sudo xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
-      - flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
+      - sudo flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
       - xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
       - xvfb-run -a /var/lib/flatpak/exports/bin/org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
       #
