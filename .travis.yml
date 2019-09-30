@@ -70,5 +70,6 @@ matrix:
       - cd ..
     
     script:
+      - wx-config --list
       - cmake -DCMAKE_BUILD_TYPE=Release ..
       - make
