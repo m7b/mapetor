@@ -35,7 +35,7 @@ matrix:
         packages:
           #- libboost-all-dev
           #- libwxgtk3.0-dev:i386
-          - libwxgtk3.0-dev
+          #- libwxgtk3.0-dev
           - doxygen
           - graphviz
           - pandoc
@@ -68,9 +68,21 @@ matrix:
       - sudo ./b2 headers
       - sudo ./b2 install --with-filesystem --with-date_time --with-test
       - cd ..
+      #
+      # Install wxWidgets
+      - wget -O wxWidgets-3.0.4.tar.bz2 https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.4/wxWidgets-3.0.4.tar.bz2
+      - tar xjf wxWidgets-3.0.4.tar.bz2
+      - cd wxWidgets-3.0.4
+      - mkdir build-gtk
+      - cd build-gtk
+      - ../configure --enable-unicode --disable-shared
+      - make -j4
+      - make install
+      - cd ..
+      
     
     script:
-      - wx-config --list
-      - ls -l /usr/lib/x86_64-linux-gnu
+      #- wx-config --list
+      #- ls -l /usr/lib/x86_64-linux-gnu
       - cmake -DCMAKE_BUILD_TYPE=Release ..
       - make
