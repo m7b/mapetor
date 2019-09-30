@@ -17,6 +17,7 @@ ELSE()
     SET(wxWidgets_USE_UNICODE ON)
     SET(wxWidgets_USE_UNIVERSAL OFF)
     SET(wxWidgets_USE_STATIC ON)
+    SET(wxWidgets_CONFIG_OPTIONS --toolkit=gtk)
 endif(WIN32)
 FIND_PACKAGE(wxWidgets REQUIRED richtext adv html core xml base)
 INCLUDE("${wxWidgets_USE_FILE}")
@@ -41,6 +42,12 @@ IF (NOT WIN32)
         OUTPUT_VARIABLE WX_LIB_OPTS
     )
     MESSAGE("WX Lib: ${WX_LIB_OPTS}")
+
+    execute_process(
+        COMMAND ${WX_CONFIG} "--toolkit=gtk"
+        OUTPUT_VARIABLE WX_TOOLKIT
+    )
+    MESSAGE("WX Lib: ${WX_TOOLKIT}")
 ENDIF(NOT WIN32)
 
 
