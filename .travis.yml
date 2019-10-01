@@ -38,6 +38,7 @@ matrix:
           #- libwxgtk3.0-dev
           - libgtk-3-dev
           - libgtk2.0-dev
+          - libatk1.0-dev
           - doxygen
           - graphviz
           - pandoc
