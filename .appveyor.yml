@@ -48,6 +48,10 @@ install:
   - refreshenv
   - set
 
+  # Install wxFormBuilder
+  - ps: Start-FileDownload 'https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v3.9.0/wxFormBuilder_v3.9.0.exe'
+  - wxFormBuilder_v3.9.0.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+
   # Installing boost & build
 #  - ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
 #  - 7z x boost_1_70_0.7z -oC:\CPP\extlibs -y
