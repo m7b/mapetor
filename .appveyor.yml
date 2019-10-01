@@ -51,6 +51,7 @@ install:
   # Install wxFormBuilder
   - ps: Start-FileDownload 'https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v3.9.0/wxFormBuilder_v3.9.0.exe'
   - wxFormBuilder_v3.9.0.exe /VERYSILENT /SUPPRESSMSGBOXES /NORESTART
+  - set PATH=%PATH%;C:\Program Files (x86)\wxFormBuilder
 
   # Installing boost & build
 #  - ps: Start-FileDownload 'https://dl.bintray.com/boostorg/release/1.70.0/source/boost_1_70_0.7z'
@@ -71,6 +72,8 @@ install:
  
   # start build project
   - cd %APPVEYOR_BUILD_FOLDER%
+  - wxFormBuilder.exe -g wxfb/wxfb_main_frame.fbp
+  - wxFormBuilder.exe -g wxfb/wxfb_info_dialog.fbp
   - mkdir build
   - cd build
   - cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DCMAKE_SH="CMAKE_SH-NOTFOUND" ..
