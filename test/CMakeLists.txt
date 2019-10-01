@@ -19,14 +19,24 @@ FOREACH(testSrc ${TEST_SRCS})
         add_executable(${testName} ${testSrc})
 
         #link to Boost libraries AND your targets and dependencies
-        target_link_libraries(
-            ${testName}
-            helpers
-            prjprops
-            ws2_32
-            -static
-            -s
-        )
+        IF(WIN32)
+            target_link_libraries(
+                ${testName}
+                helpers
+                prjprops
+                ws2_32
+                -static
+                -s
+            )
+        ELSE()
+            target_link_libraries(
+                ${testName}
+                helpers
+                prjprops
+                -static
+                -s
+            )
+        ENDIF(WIN32)
 
         #Finally add it to test execution - 
         #Notice the WORKING_DIRECTORY and COMMAND
