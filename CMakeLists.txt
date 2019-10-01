@@ -23,32 +23,32 @@ FIND_PACKAGE(wxWidgets REQUIRED richtext adv html core xml base)
 INCLUDE("${wxWidgets_USE_FILE}")
 
 
-IF (NOT WIN32)
-    find_program(WX_CONFIG
-            NAMES wx-config-3.0 wx-config-2.9 wx-config
-            PATHS
-                /usr/bin
-                /usr/local/bin
-        )
+#IF (NOT WIN32)
+#    find_program(WX_CONFIG
+#            NAMES wx-config-3.0 wx-config-2.9 wx-config
+#            PATHS
+#                /usr/bin
+#                /usr/local/bin
+#        )
 
-    execute_process(
-        COMMAND ${WX_CONFIG} "--cxxflags"
-        OUTPUT_VARIABLE WX_INC_OPTS
-    )
-    MESSAGE("WX Inc: ${WX_INC_OPTS}")
+#    execute_process(
+#        COMMAND ${WX_CONFIG} "--cxxflags"
+#        OUTPUT_VARIABLE WX_INC_OPTS
+#    )
+#    MESSAGE("WX Inc: ${WX_INC_OPTS}")
 
-    execute_process(
-        COMMAND ${WX_CONFIG} "--libs" "std,aui"
-        OUTPUT_VARIABLE WX_LIB_OPTS
-    )
-    MESSAGE("WX Lib: ${WX_LIB_OPTS}")
+#    execute_process(
+#        COMMAND ${WX_CONFIG} "--libs" "std,aui"
+#        OUTPUT_VARIABLE WX_LIB_OPTS
+#    )
+#    MESSAGE("WX Lib: ${WX_LIB_OPTS}")
 
-    execute_process(
-        COMMAND ${WX_CONFIG} "--libs --toolkit=base-unicode-3.0"
-        OUTPUT_VARIABLE WX_TOOLKIT
-    )
-    MESSAGE("WX Lib: ${WX_TOOLKIT}")
-ENDIF(NOT WIN32)
+#    execute_process(
+#        COMMAND ${WX_CONFIG} "--libs --toolkit=base-unicode-3.0"
+#        OUTPUT_VARIABLE WX_TOOLKIT
+#    )
+#    MESSAGE("WX Lib: ${WX_TOOLKIT}")
+#ENDIF(NOT WIN32)
 
 
 
