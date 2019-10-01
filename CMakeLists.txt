@@ -148,7 +148,7 @@ target_link_libraries(
     ${CMAKE_PROJECT_NAME}
     gui
     prjprops
-    -static
+#    -static
     $<$<CONFIG:Release>:-s>
 )
 ENDIF(WIN32)
