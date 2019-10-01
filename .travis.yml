@@ -9,6 +9,7 @@ services:
   - xvfb
 cache:
   directories:
+    - /home/travis/build/m7b/mapetor/boost_1_70_0
     - /home/travis/build/m7b/mapetor/wxWidgets-3.0.4
 
 #
@@ -42,6 +43,7 @@ matrix:
           - libgtk-3-0
           - libgtk-3-dev
           - libgtk2.0-dev
+          - gdk-pixbuf
           #- libatk1.0-dev
           #- libatk1.0
           #- libatk1.0
