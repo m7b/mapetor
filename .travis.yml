@@ -43,7 +43,7 @@ matrix:
           - libgtk-3-0
           - libgtk-3-dev
           - libgtk2.0-dev
-          - gdk-pixbuf
+          - libgdk-pixbuf2.0-0
           #- libatk1.0-dev
           #- libatk1.0
           #- libatk1.0
