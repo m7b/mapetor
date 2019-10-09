@@ -35,6 +35,7 @@ SET(Boost_USE_MULTITHREADED      ON)
 SET(Boost_USE_STATIC_RUNTIME    OFF)
 FIND_PACKAGE(Boost 1.70.0 REQUIRED filesystem date_time)
 
+MESSAGE("Boost_INCLUDE_DIRS: ${Boost_INCLUDE_DIRS}")
 
 include_directories(
     "${Boost_INCLUDE_DIRS}"
