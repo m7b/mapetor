@@ -45,7 +45,8 @@ install:
   - set PATH=C:\ProgramData\chocolatey\bin;C:\Program Files\7-Zip;C:\Program Files (x86)\CMake\bin
 
   # Install Pandoc, doxygen, graphviz, UPX, MinGW-w64 --x86 (32bit)
-  - cinst pandoc doxygen.install graphviz upx mingw --x86
+  #- cinst pandoc doxygen.install graphviz upx mingw --x86
+  - cinst pandoc doxygen.install graphviz upx mingw
   - refreshenv
   - set
 
