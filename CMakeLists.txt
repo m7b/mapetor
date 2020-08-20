@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.0)
 project (mapetor)
 
-SET(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+LIST(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
 
 ### wxWidgets
@@ -24,7 +24,7 @@ INCLUDE("${wxWidgets_USE_FILE}")
 ## Boost
 #SET(Boost_DEBUG ON)
 IF(WIN32)
-    SET(Boost_COMPILER "-mgw81")
+    #SET(Boost_COMPILER "-mgw81")
     SET(Boost_ARCHITECTURE "-x32")
     SET(BOOST_ROOT "C:/CPP/extlibs/boost_1_70_0")
     SET(BOOST_INCLUDEDIR "C:/CPP/extlibs/boost_1_70_0")
