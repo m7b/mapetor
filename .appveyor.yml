@@ -46,7 +46,7 @@ install:
 
   # Install Pandoc, doxygen, graphviz, UPX, MinGW-w64 --x86 (32bit)
   #- cinst pandoc doxygen.install graphviz upx mingw --x86
-  - cinst pandoc doxygen.install graphviz upx mingw
+  - cinst pandoc doxygen graphviz upx mingw
   - refreshenv
   - set
 
