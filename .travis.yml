@@ -55,10 +55,10 @@ matrix:
       - sudo add-apt-repository ppa:alexlarsson/flatpak -y
       - sudo apt update
       - sudo apt install flatpak
-      - sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-      - sudo flatpak install --assumeyes flathub org.freedesktop.Platform//18.08
+      - flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+      - flatpak install --assumeyes flathub org.freedesktop.Platform//18.08
       - wget https://github.com/wxFormBuilder/wxFormBuilder/releases/download/v3.9.0/wxformbuilder.flatpak
-      - sudo flatpak install --assumeyes wxformbuilder.flatpak
+      - flatpak install --assumeyes wxformbuilder.flatpak
       - flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_main_frame.fbp
       - flatpak run org.wxformbuilder.wxFormBuilder -g wxfb/wxfb_info_dialog.fbp
       #
